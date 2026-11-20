@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AquaDrop | Reliable Drinking Water Supply for Businesses</title>
+    <meta
+      name="description"
+      content="Packaged drinking water supply enquiries for offices, hotels, restaurants, events and businesses."
+    />
+    <meta
+      property="og:title"
+      content="AquaDrop | Reliable Drinking Water Supply for Businesses"
+    />
+    <meta
+      property="og:description"
+      content="Packaged drinking water supply enquiries for offices, hotels, restaurants, events and businesses."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body class="bg-white text-slate-800 antialiased">
+    <div id="site-header"></div>
+    <main>
+      <section class="relative overflow-hidden bg-[#071b42] text-white">
+        <img
+          src="https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=1800&q=75"
+          alt="Packaged drinking water bottles"
+          class="absolute inset-0 h-full w-full object-cover opacity-30"
+          fetchpriority="high"
+          onerror="this.remove()"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-[#071b42] via-[#071b42]/90 to-[#0a3a8f]/50"
+        ></div>
+        <div
+          class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-5 lg:py-28"
+        >
+          <div class="lg:col-span-3">
+            <p class="eyebrow !text-cyan-300">Packaged Drinking Water Supply</p>
+            <h1
+              class="mt-5 text-4xl font-extrabold leading-[1.08] sm:text-5xl xl:text-6xl"
+            >
+              Reliable drinking water supply for your business.
+            </h1>
+            <p class="mt-6 max-w-xl text-lg leading-8 text-slate-300">
+              A convenient water supply partner for offices, hotels,
+              restaurants, retailers and events. Tell us what your business
+              needs.
+            </p>
+            <div class="mt-9 flex flex-wrap gap-3">
+              <a href="products.html" class="btn btn-light">View Products</a
+              ><a href="contact.html" class="btn btn-ghost">Request a Quote</a>
+            </div>
+          </div>
+          <div
+            class="rounded-2xl bg-white p-7 text-slate-800 shadow-2xl lg:col-span-2"
+          >
+            <p class="eyebrow">What you can request</p>
+            <ul class="mt-5 space-y-4 text-sm font-semibold">
+              <li class="flex items-center gap-3">
+                <span class="ico h-10 w-10"
+                  ><i data-lucide="package" class="h-5 w-5"></i></span
+                >Multiple bottle sizes
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="ico h-10 w-10"
+                  ><i data-lucide="layers" class="h-5 w-5"></i></span
+                >Bulk order quotations
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="ico h-10 w-10"
+                  ><i data-lucide="calendar-clock" class="h-5 w-5"></i></span
+                >One-time or recurring supply
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="ico h-10 w-10"
+                  ><i data-lucide="truck" class="h-5 w-5"></i></span
+                >Delivery planning
+              </li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary mt-7 w-full"
+              >Get a Business Quote</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="border-b border-slate-200 bg-white">
+        <div
+          class="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-5 py-8 sm:px-8 md:grid-cols-4"
+        >
+          <div class="flex items-center gap-3 text-sm font-semibold">
+            <i data-lucide="building-2" class="h-6 w-6 text-blue-600"></i
+            >Corporate enquiries
+          </div>
+          <div class="flex items-center gap-3 text-sm font-semibold">
+            <i data-lucide="package" class="h-6 w-6 text-blue-600"></i>Multiple
+            bottle sizes
+          </div>
+          <div class="flex items-center gap-3 text-sm font-semibold">
+            <i data-lucide="layers" class="h-6 w-6 text-blue-600"></i>Bulk order
+            requests
+          </div>
+          <div class="flex items-center gap-3 text-sm font-semibold">
+            <i data-lucide="truck" class="h-6 w-6 text-blue-600"></i>Delivery
+            planning
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <div class="mb-10 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="eyebrow">Our Product Range</p>
+            <h2 class="section-title">Choose the right bottle size.</h2>
+            <p class="section-copy">
+              Explore bottle sizes for different business and event
+              requirements.
+            </p>
+          </div>
+          <a
+            class="inline-flex items-center gap-2 text-sm font-bold text-blue-700"
+            href="products.html"
+            >View all products <i data-lucide="arrow-right" class="h-4 w-4"></i
+          ></a>
+        </div>
+        <div
+          id="products-grid"
+          data-limit="4"
+          class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        ></div>
+      </section>
+
+      <section class="bg-slate-50 py-20">
+        <div class="mx-auto max-w-7xl px-5 sm:px-8">
+          <div class="max-w-2xl">
+            <p class="eyebrow">Who We Serve</p>
+            <h2 class="section-title">
+              One point of contact for your water needs.
+            </h2>
+            <p class="section-copy">
+              Share your quantity, location and preferred schedule. We’ll
+              discuss a suitable supply arrangement.
+            </p>
+          </div>
+          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div
+              class="rv zoom group relative overflow-hidden rounded-2xl img-fb aspect-[4/5]"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=700&q=75"
+                alt="Corporate Offices"
+                loading="lazy"
+                class="h-full w-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#071b42]/90 via-[#071b42]/20 to-transparent"
+              ></div>
+              <div class="absolute inset-x-0 bottom-0 p-5 text-white">
+                <i data-lucide="building-2" class="h-6 w-6 text-cyan-300"></i>
+                <h3 class="mt-3 text-lg font-extrabold">Corporate Offices</h3>
+                <p class="mt-1 text-sm text-slate-200">
+                  For teams, meetings and visitors.
+                </p>
+              </div>
+            </div>
+            <div
+              class="rv zoom group relative overflow-hidden rounded-2xl img-fb aspect-[4/5]"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=75"
+                alt="Hotels & Restaurants"
+                loading="lazy"
+                class="h-full w-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#071b42]/90 via-[#071b42]/20 to-transparent"
+              ></div>
+              <div class="absolute inset-x-0 bottom-0 p-5 text-white">
+                <i data-lucide="hotel" class="h-6 w-6 text-cyan-300"></i>
+                <h3 class="mt-3 text-lg font-extrabold">
+                  Hotels & Restaurants
+                </h3>
+                <p class="mt-1 text-sm text-slate-200">
+                  For guest rooms, dining and service areas.
+                </p>
+              </div>
+            </div>
+            <div
+              class="rv zoom group relative overflow-hidden rounded-2xl img-fb aspect-[4/5]"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=700&q=75"
+                alt="Events & Functions"
+                loading="lazy"
+                class="h-full w-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#071b42]/90 via-[#071b42]/20 to-transparent"
+              ></div>
+              <div class="absolute inset-x-0 bottom-0 p-5 text-white">
+                <i
+                  data-lucide="calendar-days"
+                  class="h-6 w-6 text-cyan-300"
+                ></i>
+                <h3 class="mt-3 text-lg font-extrabold">Events & Functions</h3>
+                <p class="mt-1 text-sm text-slate-200">
+                  For conferences, celebrations and gatherings.
+                </p>
+              </div>
+            </div>
+            <div
+              class="rv zoom group relative overflow-hidden rounded-2xl img-fb aspect-[4/5]"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=700&q=75"
+                alt="Retail & Shops"
+                loading="lazy"
+                class="h-full w-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#071b42]/90 via-[#071b42]/20 to-transparent"
+              ></div>
+              <div class="absolute inset-x-0 bottom-0 p-5 text-white">
+                <i data-lucide="store" class="h-6 w-6 text-cyan-300"></i>
+                <h3 class="mt-3 text-lg font-extrabold">Retail & Shops</h3>
+                <p class="mt-1 text-sm text-slate-200">
+                  For stores and local business requirements.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-wrap">
+        <div class="max-w-2xl">
+          <p class="eyebrow">How It Works</p>
+          <h2 class="section-title">Simple process, clear communication.</h2>
+        </div>
+        <div class="mt-12 grid gap-10 md:grid-cols-3">
+          <div class="rv">
+            <span
+              class="fh grid h-12 w-12 place-items-center rounded-full bg-[#071b42] font-extrabold text-white"
+              >1</span
+            >
+            <h3 class="mt-4 text-lg font-extrabold text-[#071b42]">
+              Share your requirement
+            </h3>
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Tell us your bottle size, estimated quantity and delivery
+              location.
+            </p>
+          </div>
+          <div class="rv">
+            <span
+              class="fh grid h-12 w-12 place-items-center rounded-full bg-[#071b42] font-extrabold text-white"
+              >2</span
+            >
+            <h3 class="mt-4 text-lg font-extrabold text-[#071b42]">
+              Receive a follow-up
+            </h3>
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Our team contacts you to discuss availability, pricing and
+              delivery.
+            </p>
+          </div>
+          <div class="rv">
+            <span
+              class="fh grid h-12 w-12 place-items-center rounded-full bg-[#071b42] font-extrabold text-white"
+              >3</span
+            >
+            <h3 class="mt-4 text-lg font-extrabold text-[#071b42]">
+              Plan your supply
+            </h3>
+            <p class="mt-2 text-sm leading-6 text-slate-500">
+              Agree a one-time or recurring supply schedule that suits you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-slate-50 py-20">
+        <div
+          class="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2"
+        >
+          <div class="relative">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=75"
+              alt="Business team in a modern office"
+              loading="lazy"
+              class="aspect-[5/4] w-full rounded-2xl object-cover img-fb shadow-xl"
+            />
+          </div>
+          <div>
+            <p class="eyebrow">Why AquaDrop</p>
+            <h2 class="section-title">Built around your business needs.</h2>
+            <div class="mt-8 grid gap-5 sm:grid-cols-2">
+              <div class="flex gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="mt-0.5 h-5 w-5 shrink-0 text-blue-600"
+                ></i>
+                <div>
+                  <h3 class="font-bold">Bottle size options</h3>
+                  <p class="mt-1 text-sm text-slate-500">
+                    Pack sizes to suit your use.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="mt-0.5 h-5 w-5 shrink-0 text-blue-600"
+                ></i>
+                <div>
+                  <h3 class="font-bold">Bulk order enquiries</h3>
+                  <p class="mt-1 text-sm text-slate-500">
+                    Quotations based on quantity.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="mt-0.5 h-5 w-5 shrink-0 text-blue-600"
+                ></i>
+                <div>
+                  <h3 class="font-bold">Planned supply</h3>
+                  <p class="mt-1 text-sm text-slate-500">
+                    One-time or recurring schedules.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <i
+                  data-lucide="check-circle-2"
+                  class="mt-0.5 h-5 w-5 shrink-0 text-blue-600"
+                ></i>
+                <div>
+                  <h3 class="font-bold">Direct communication</h3>
+                  <p class="mt-1 text-sm text-slate-500">
+                    Talk to our team directly.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-dark mt-9" href="contact.html"
+              >Discuss Your Requirements</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#071b42]">
+        <div
+          class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-5 py-14 text-center sm:px-8 md:flex-row md:text-left"
+        >
+          <div>
+            <h2 class="text-3xl font-extrabold text-white">
+              Need water for your business?
+            </h2>
+            <p class="mt-2 text-slate-300">
+              Share your requirement and we’ll get back to you.
+            </p>
+          </div>
+          <a href="contact.html" class="btn btn-light"
+            >Request a Business Quote</a
+          >
+        </div>
+      </section>
+    </main>
+    <div id="site-footer"></div>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
