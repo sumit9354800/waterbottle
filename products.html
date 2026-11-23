@@ -1,24 +1,385 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Our Products | AquaDrop</title>
-<meta name="description" content="Packaged water bottle sizes for offices, hotels, restaurants and events.">
-<meta property="og:title" content="Our Products | AquaDrop"><meta property="og:description" content="Packaged water bottle sizes for offices, hotels, restaurants and events."><meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
-<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body class="bg-white text-slate-800 antialiased">
-<div id="site-header"></div>
-<main>
-<section class="relative overflow-hidden bg-[#071b42] text-white"><img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=1600&q=70" alt="" class="absolute inset-0 h-full w-full object-cover opacity-25" onerror="this.remove()"><div class="absolute inset-0 bg-gradient-to-r from-[#071b42] via-[#071b42]/90 to-[#0a3a8f]/60"></div>
-<div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20"><p class="eyebrow !text-cyan-300">Our Collection</p><h1 class="mt-4 max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">Packaged water options for your business.</h1><p class="mt-5 max-w-2xl leading-7 text-slate-300">Select a bottle size to send us an enquiry. Pricing and availability can be discussed based on quantity and delivery location.</p></div></section>
-<section class="section-wrap"><div class="mb-10 flex flex-wrap items-end justify-between gap-4"><div><h2 class="section-title">Explore bottle sizes</h2><p class="section-copy">Choose a product to start your enquiry.</p></div><a href="contact.html" class="inline-flex items-center gap-2 text-sm font-bold text-blue-700">General enquiry <i data-lucide="arrow-right" class="h-4 w-4"></i></a></div><div id="products-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div></section>
-</main>
-<div id="site-footer"></div>
-<script src="assets/js/script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products | OCEARA - Pure Hydration</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Extra CSS for Products Page only -->
+    <style>
+      /* Products Page Specific Overrides */
+      .page-hero {
+        background-color: var(--navy);
+        padding: 180px 0 100px;
+        text-align: center;
+        position: relative;
+      }
+      .page-hero h1 {
+        font-family: var(--serif);
+        font-size: clamp(3rem, 6vw, 5rem);
+        color: white;
+        margin-bottom: 20px;
+      }
+      .page-hero p {
+        color: rgba(255, 255, 255, 0.6);
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+      }
+
+      .product-grid-full {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+      }
+
+      /* Make cards look a bit taller on the products page */
+      .product-card .product-img {
+        height: 400px;
+      }
+
+      /* Category Filter Buttons */
+      .filter-bar {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 60px;
+        flex-wrap: wrap;
+      }
+      .filter-btn {
+        padding: 10px 24px;
+        border: 1px solid #ddd;
+        background: transparent;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s;
+        color: var(--text-dark);
+      }
+      .filter-btn.active,
+      .filter-btn:hover {
+        background-color: var(--navy);
+        color: white;
+        border-color: var(--navy);
+      }
+
+      /* Bulk Enquiry CTA on Products page */
+      .bulk-cta {
+        background-color: var(--bg-offwhite);
+        text-align: center;
+        padding: 80px 0;
+        border-top: 1px solid #eee;
+      }
+      .bulk-cta h2 {
+        font-family: var(--serif);
+        font-size: 3rem;
+        color: var(--navy);
+        margin-bottom: 20px;
+      }
+      .bulk-cta p {
+        color: var(--text-light);
+        max-width: 600px;
+        margin: 0 auto 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-icon"></span>
+          OCEARA
+        </a>
+        <ul class="nav-links">
+     <li><a href="products.html" class="active" style="color: var(--cyan)">Products</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="index.html#serve">Who We Serve</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="index.html#contact" class="btn btn-yellow magnetic"
+          >Get a Quote ↗</a
+        >
+      </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="hero-bg-grid"></div>
+      <div class="container">
+        <span class="eyebrow" style="display: block; margin-bottom: 20px"
+          >The Collection</span
+        >
+        <h1>A considered size for every setting</h1>
+        <p>
+          Five formats, one uncompromising standard. Choose the right silhouette
+          for your guests, team or table.
+        </p>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrapper" style="margin-top: -20px">
+      <div class="marquee-content">
+        <span>Pure by design</span><span>Delivered with intent</span
+        ><span>Delhi NCR</span> <span>Pure by design</span
+        ><span>Delivered with intent</span><span>Delhi NCR</span>
+        <span>Pure by design</span><span>Delivered with intent</span
+        ><span>Delhi NCR</span> <span>Pure by design</span
+        ><span>Delivered with intent</span><span>Delhi NCR</span>
+      </div>
+    </div>
+
+    <!-- PRODUCTS SECTION -->
+    <section
+      class="section-padding"
+      style="background-color: var(--bg-offwhite)"
+    >
+      <div class="container">
+        <!-- Filter Bar (Optional - just for look) -->
+        <div class="filter-bar reveal">
+          <button class="filter-btn active">All Sizes</button>
+          <button class="filter-btn">Small Bottles</button>
+          <button class="filter-btn">Large Bottles</button>
+          <button class="filter-btn">Bulk Jars</button>
+        </div>
+
+        <div class="product-grid-full">
+          <!-- 250ml -->
+          <div class="product-card reveal tilt-card">
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=800&auto=format&fit=crop"
+                alt="250ml Bottle"
+              />
+              <span class="product-tag">↗ 01</span>
+            </div>
+            <div class="product-info">
+              <span class="eyebrow dark" style="margin-bottom: 5px"
+                >Compact & Sleek</span
+              >
+              <h3>250 ml</h3>
+              <p class="desc">Events, conferences, airlines</p>
+              <div class="product-bottom">
+                <div class="price">₹90 <span>/ box</span></div>
+                <a href="index.html#contact" class="circle-btn"
+                  ><i data-lucide="arrow-up-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 500ml -->
+          <div
+            class="product-card reveal tilt-card"
+            style="transition-delay: 0.1s"
+          >
+            <div class="product-img">
+              <img
+                src="https://bookmyrashan.com/cdn/shop/files/kinley-packaged-drinking-water-1-l-product-images-o490001790-p490001790-0-202203171141.webp?v=1751357496&width=1920"
+                alt="500ml Bottle"
+              />
+              <span class="product-tag">↗ 02</span>
+            </div>
+            <div class="product-info">
+              <span class="eyebrow dark" style="margin-bottom: 5px"
+                >Everyday Elegance</span
+              >
+              <h3>500 ml</h3>
+              <p class="desc">Corporate offices, hotels, cafes</p>
+              <div class="product-bottom">
+                <div class="price">₹90 <span>/ box</span></div>
+                <a href="index.html#contact" class="circle-btn"
+                  ><i data-lucide="arrow-up-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1L -->
+          <div
+            class="product-card reveal tilt-card"
+            style="transition-delay: 0.2s"
+          >
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1523362628745-0c100150b504?q=80&w=800&auto=format&fit=crop"
+                alt="1L Bottle"
+              />
+              <span class="product-tag">↗ 03</span>
+            </div>
+            <div class="product-info">
+              <span class="eyebrow dark" style="margin-bottom: 5px"
+                >Dining Standard</span
+              >
+              <h3>1 Litre</h3>
+              <p class="desc">Fine dining, restaurants, boardrooms</p>
+              <div class="product-bottom">
+                <div class="price">₹75 <span>/ box</span></div>
+                <a href="index.html#contact" class="circle-btn"
+                  ><i data-lucide="arrow-up-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2L (New from your details) -->
+          <div
+            class="product-card reveal tilt-card"
+            style="transition-delay: 0.3s"
+          >
+            <div class="product-img">
+              <!-- Using a placeholder image for 2L -->
+              <img
+                src="https://5.imimg.com/data5/SELLER/Default/2026/4/597783717/SZ/WT/BM/32414787/product-jpeg-500x500.jpeg"
+                alt="2L Bottle"
+              />
+              <span class="product-tag">↗ 04</span>
+            </div>
+            <div class="product-info">
+              <span class="eyebrow dark" style="margin-bottom: 5px"
+                >Family & Office</span
+              >
+              <h3>2 Litre</h3>
+              <p class="desc">Bulk water for meetings and families</p>
+              <div class="product-bottom">
+                <div class="price" style="font-size: 1rem">
+                  Contact for Quote
+                </div>
+                <a href="index.html#contact" class="circle-btn"
+                  ><i data-lucide="arrow-up-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 20L (New from your details) -->
+          <div
+            class="product-card reveal tilt-card"
+            style="transition-delay: 0.4s"
+          >
+            <div class="product-img">
+              <!-- Using a placeholder image for 20L Jar -->
+              <img
+                src="https://images.unsplash.com/photo-1523362628745-0c100150b504?q=80&w=800&auto=format&fit=crop"
+                alt="20L Jar"
+              />
+              <span class="product-tag">↗ 05</span>
+            </div>
+            <div class="product-info">
+              <span class="eyebrow dark" style="margin-bottom: 5px"
+                >Water Dispenser Standard</span
+              >
+              <h3>20 Litre Jar</h3>
+              <p class="desc">Ideal for offices and large dispensers</p>
+              <div class="product-bottom">
+                <div class="price" style="font-size: 1rem">
+                  Contact for Quote
+                </div>
+                <a href="index.html#contact" class="circle-btn"
+                  ><i data-lucide="arrow-up-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BULK CTA -->
+    <section class="bulk-cta reveal">
+      <div class="container">
+        <h2>Need a custom quote?</h2>
+        <p>
+          We supply bulk orders to corporate offices, hotels, and events across
+          NCR. Let us know your requirement.
+        </p>
+        <a href="index.html#contact" class="btn btn-yellow magnetic"
+          >Request a Business Quote ↗</a
+        >
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand reveal">
+            <a href="index.html" class="logo">
+              <span class="logo-icon"></span>
+              OCEARA
+            </a>
+            <p>
+              Premium packaged drinking water for Delhi NCR's finest
+              establishments.
+            </p>
+          </div>
+          <div class="footer-col reveal" style="transition-delay: 0.1s">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="index.html#about">Our Story</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col reveal" style="transition-delay: 0.2s">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="mailto:ocearadwaters@gmail.com">Email us</a></li>
+              <li>
+                <a
+                  href="https://instagram.com/Oceara_drinking_water"
+                  target="_blank"
+                  >Instagram</a
+                >
+              </li>
+              <li><a href="#">Delhi NCR, India</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom reveal" style="transition-delay: 0.3s">
+          <span>© 2024 Oceara</span>
+          <div class="footer-badges">
+            <span>FSSAI</span>
+            <span>GST</span>
+            <span>Manufacturer Direct</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a
+      href="https://wa.me/919999999999?text=Hi%20Oceara,%20I%20am%20interested%20in%20your%20water%20supply"
+      target="_blank"
+      class="whatsapp-float"
+      aria-label="WhatsApp"
+    >
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+  </body>
 </html>

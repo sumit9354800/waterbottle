@@ -2,1888 +2,1516 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <meta name="theme-color" content="#071b42" />
-    <title>
-      AquaDrop | Reliable Packaged Drinking Water Supply for Businesses
-    </title>
-    <meta
-      name="description"
-      content="AquaDrop supplies packaged drinking water to offices, hotels, restaurants, events and retailers. Request a quote for bulk or recurring supply."
-    />
-    <meta property="og:site_name" content="AquaDrop" />
-    <meta
-      property="og:title"
-      content="AquaDrop | Reliable Packaged Drinking Water Supply for Businesses"
-    />
-    <meta
-      property="og:description"
-      content="Packaged drinking water supply enquiries for offices, hotels, restaurants, events and businesses."
-    />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <!-- ✏️ Add your real og:image (1200x630) and canonical URL when the domain is ready:
-    <meta property="og:image" content="https://your-domain.com/assets/img/og.jpg" />
-    <link rel="canonical" href="https://your-domain.com/" /> -->
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23071b42'/%3E%3Cpath d='M32 10C32 10 17 28 17 38a15 15 0 0 0 30 0C47 28 32 10 32 10z' fill='%2322d3ee'/%3E%3C/svg%3E"
-    />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "AquaDrop",
-        "description": "Packaged drinking water supply for offices, hotels, restaurants, events and retailers.",
-        "areaServed": "IN"
-      }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OCEARA | Pure Hydration, Delivered with Intent</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <noscript>
-      <style>
-        .rv {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-      </style>
-    </noscript>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-      /* ===== Home-only enhancements (safe to move into style.css) ===== */
+      /* --- CSS VARIABLES & RESET --- */
       :root {
-        --brand: #071b42;
-        --brand-2: #0b5fd6;
-        --cyan: #22d3ee;
-        --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+        --navy: #06101f;
+        --navy-light: #0a192f;
+        --cyan: #00e5ff; /* Brighter cyan */
+        --yellow: #ffb703;
+        --bg-offwhite: #f4f4f4;
+        --text-dark: #111;
+        --text-light: #666;
+        --serif: "DM Serif Display", serif;
+        --sans: "Inter", sans-serif;
+        --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
       html {
         scroll-behavior: smooth;
-        scroll-padding-top: 88px;
       }
 
-      /* Fluid section rhythm */
-      .sec {
-        padding-block: clamp(3.5rem, 7vw, 6rem);
+      body {
+        font-family: var(--sans);
+        background-color: var(--bg-offwhite);
+        color: var(--text-dark);
+        overflow-x: hidden;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
       }
 
-      /* Accessibility */
-      .skip-link {
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      ul {
+        list-style: none;
+      }
+
+      /* Custom Cursor (Desktop Only) */
+      .cursor-dot,
+      .cursor-outline {
         position: fixed;
-        left: 12px;
-        top: 12px;
-        opacity: 0;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 9999;
         pointer-events: none;
-        transform: translateY(-16px);
-        z-index: 100;
-        background: #fff;
-        color: var(--brand);
-        font-weight: 700;
-        padding: 0.6rem 1rem;
-        border-radius: 0.75rem;
-        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: var(--cyan);
+      }
+      .cursor-outline {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(0, 229, 255, 0.5);
         transition:
-          opacity 0.2s,
-          transform 0.2s;
+          width 0.2s,
+          height 0.2s,
+          opacity 0.3s;
       }
-      .skip-link:focus {
+      body:hover .cursor-dot,
+      body:hover .cursor-outline {
         opacity: 1;
-        pointer-events: auto;
-        transform: none;
-      }
-      :focus-visible {
-        outline: 3px solid var(--cyan);
-        outline-offset: 2px;
       }
 
-      /* Scroll progress */
-      #progress {
-        position: fixed;
-        inset: 0 0 auto 0;
-        height: 3px;
-        z-index: 90;
-        transform-origin: left;
-        transform: scaleX(0);
-        background: linear-gradient(90deg, var(--brand-2), var(--cyan));
-        pointer-events: none;
-      }
-
-      /* Hero background */
-      .hero-mesh {
-        background:
-          radial-gradient(
-            ellipse 80% 60% at 18% 0%,
-            rgba(11, 95, 214, 0.38),
-            transparent 60%
-          ),
-          radial-gradient(
-            ellipse 70% 60% at 92% 100%,
-            rgba(34, 211, 238, 0.2),
-            transparent 60%
-          ),
-          var(--brand);
-      }
-      .hero-grid {
-        background-image:
-          linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-          linear-gradient(
-            90deg,
-            rgba(255, 255, 255, 0.045) 1px,
-            transparent 1px
-          );
-        background-size: 56px 56px;
-        -webkit-mask-image: radial-gradient(
-          ellipse 75% 70% at 50% 38%,
-          #000 30%,
-          transparent 78%
-        );
-        mask-image: radial-gradient(
-          ellipse 75% 70% at 50% 38%,
-          #000 30%,
-          transparent 78%
-        );
-      }
-      .hero-glow {
-        position: absolute;
-        border-radius: 9999px;
-        filter: blur(80px);
-        pointer-events: none;
-        animation: floaty 12s var(--ease) infinite alternate;
-      }
-      @keyframes floaty {
-        from {
-          transform: translate3d(0, 0, 0);
-        }
-        to {
-          transform: translate3d(0, -24px, 0);
+      @media (max-width: 1024px) {
+        .cursor-dot,
+        .cursor-outline {
+          display: none;
         }
       }
 
-      /* Rising bubbles */
-      .bubbles {
-        position: absolute;
-        inset: 0;
+      /* --- UTILITIES --- */
+      .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 5%;
+      }
+      .section-padding {
+        padding: 140px 0;
+      }
+
+      .eyebrow {
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-weight: 600;
+        color: var(--cyan);
+        margin-bottom: 1.5rem;
+        display: block;
+      }
+      .eyebrow.dark {
+        color: var(--text-light);
+      }
+
+      .heading-serif {
+        font-family: var(--serif);
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        line-height: 1.1;
+        font-weight: 400;
+        color: var(--text-dark);
+      }
+      .heading-serif em {
+        color: var(--cyan);
+        font-style: italic;
+      }
+
+      /* Magnetic Button Base */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 32px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        cursor: pointer;
+        border: none;
+        position: relative;
         overflow: hidden;
-        pointer-events: none;
-      }
-      .bubble {
-        position: absolute;
-        bottom: -60px;
-        left: var(--x);
-        width: var(--s);
-        height: var(--s);
-        border-radius: 9999px;
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        background: radial-gradient(
-          circle at 30% 30%,
-          rgba(255, 255, 255, 0.35),
-          rgba(255, 255, 255, 0.03) 62%
-        );
-        opacity: 0;
-        animation: rise var(--t) linear var(--d) infinite;
-      }
-      @keyframes rise {
-        0% {
-          transform: translate3d(0, 0, 0);
-          opacity: 0;
-        }
-        12% {
-          opacity: 0.85;
-        }
-        50% {
-          transform: translate3d(14px, -380px, 0);
-        }
-        90% {
-          opacity: 0.5;
-        }
-        100% {
-          transform: translate3d(-10px, -820px, 0);
-          opacity: 0;
-        }
+        transition:
+          background 0.3s,
+          color 0.3s;
       }
 
-      /* Glass card */
-      .glass-panel {
-        background: rgba(255, 255, 255, 0.06);
-        -webkit-backdrop-filter: blur(16px) saturate(140%);
-        backdrop-filter: blur(16px) saturate(140%);
-        border: 1px solid rgba(255, 255, 255, 0.14);
-        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      .btn-yellow {
+        background-color: var(--yellow);
+        color: var(--navy);
+      }
+      .btn-yellow:hover {
+        background-color: #ffa200;
       }
 
-      /* Fluid headline */
-      .hero-title {
-        font-size: clamp(2.15rem, 6.2vw, 4.1rem);
-        line-height: 1.05;
-        letter-spacing: -0.03em;
+      .btn-outline {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
       }
-      .hero-title .shine {
-        background-size: 220% auto;
-        animation: shine 7s linear infinite;
-      }
-      @keyframes shine {
-        to {
-          background-position: 220% center;
-        }
-      }
-      .hero-sub {
-        font-size: clamp(1rem, 1.6vw, 1.125rem);
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: white;
       }
 
-      /* Counters */
-      .stat-num {
-        font-variant-numeric: tabular-nums;
+      .btn-white {
+        background-color: white;
+        color: var(--navy);
       }
-      .stat-cell + .stat-cell {
+      .btn-white:hover {
+        background-color: #e0e0e0;
+      }
+
+      /* --- NAVBAR --- */
+      nav {
+        position: fixed; /* Fixed for better UX */
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 25px 0;
+        z-index: 100;
+        transition: all 0.4s var(--ease-out);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      nav.scrolled {
+        background: rgba(6, 16, 31, 0.9);
+        backdrop-filter: blur(20px);
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: white;
+        font-size: 1.2rem;
+        letter-spacing: 0.25em;
+        font-weight: 500;
+      }
+      .logo-icon {
+        width: 24px;
+        height: 24px;
+        background-color: var(--cyan);
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        display: inline-block;
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 40px;
+      }
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 500;
+        transition: color 0.3s;
         position: relative;
       }
-      @media (min-width: 768px) {
-        .stat-cell + .stat-cell::before {
-          content: "";
-          position: absolute;
-          left: -12px;
-          top: 8%;
-          bottom: 8%;
-          width: 1px;
-          background: rgba(255, 255, 255, 0.1);
-        }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--cyan);
+        transition: width 0.3s var(--ease-out);
+      }
+      .nav-links a:hover {
+        color: white;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
       }
 
-      /* Industry marquee */
-      .marquee {
-        overflow: hidden;
-        -webkit-mask-image: linear-gradient(
-          90deg,
-          transparent,
-          #000 8%,
-          #000 92%,
-          transparent
-        );
-        mask-image: linear-gradient(
-          90deg,
-          transparent,
-          #000 8%,
-          #000 92%,
-          transparent
-        );
-      }
-      .marquee-track {
+      /* --- HERO SECTION --- */
+      .hero {
+        background-color: var(--navy);
+        min-height: 100vh;
         display: flex;
-        width: max-content;
-        gap: 0.75rem;
-        animation: marquee 38s linear infinite;
-      }
-      .marquee:hover .marquee-track {
-        animation-play-state: paused;
-      }
-      @keyframes marquee {
-        to {
-          transform: translateX(calc(-50% - 0.375rem));
-        }
+        align-items: center;
+        padding-top: 120px;
+        position: relative;
+        overflow: hidden;
       }
 
-      /* Products: skeleton while JS renders, soft hover */
-      #products-grid:empty {
-        min-height: 260px;
-        border-radius: 1rem;
-        background: linear-gradient(
-          100deg,
-          #f1f5f9 30%,
-          #e2e8f0 50%,
-          #f1f5f9 70%
+      /* Subtle animated background grid */
+      .hero-bg-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 80px 80px;
+        mask-image: radial-gradient(
+          circle at center,
+          black 20%,
+          transparent 80%
         );
-        background-size: 200% 100%;
-        animation: skel 1.4s linear infinite;
-      }
-      @keyframes skel {
-        to {
-          background-position: -200% 0;
-        }
-      }
-      #products-grid > * {
-        transition:
-          transform 0.35s var(--ease),
-          box-shadow 0.35s var(--ease);
-      }
-      #products-grid > *:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 24px 48px -24px rgba(7, 27, 66, 0.3);
+        -webkit-mask-image: radial-gradient(
+          circle at center,
+          black 20%,
+          transparent 80%
+        );
+        z-index: 0;
       }
 
-      /* Who we serve */
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-content h1 {
+        font-family: var(--serif);
+        font-size: clamp(3.5rem, 6vw, 5.5rem);
+        line-height: 1;
+        color: white;
+        margin-bottom: 30px;
+        letter-spacing: -0.02em;
+      }
+
+      /* Text Reveal Animation CSS */
+      .reveal-text {
+        overflow: hidden;
+        display: block;
+      }
+      .reveal-text > span {
+        display: block;
+        transform: translateY(100%);
+        animation: revealUp 1s var(--ease-out) forwards;
+      }
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+      @keyframes revealUp {
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      .hero-content p {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 1.1rem;
+        max-width: 480px;
+        margin-bottom: 45px;
+        font-weight: 300;
+        opacity: 0;
+        animation: fadeIn 1s 0.6s forwards;
+      }
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 60px;
+        opacity: 0;
+        animation: fadeIn 1s 0.8s forwards;
+      }
+
+      .hero-trust {
+        display: flex;
+        gap: 35px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 30px;
+        opacity: 0;
+        animation: fadeIn 1s 1s forwards;
+      }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .trust-item i {
+        color: var(--cyan);
+        width: 16px;
+        height: 16px;
+      }
+
+      /* Hero Image with Parallax */
+      .hero-image-wrapper {
+        position: relative;
+        perspective: 1000px;
+      }
+
+      .hero-image-frame {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 12px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.1s; /* For JS tilt */
+      }
+      .hero-image-frame::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        background: linear-gradient(
+          135deg,
+          rgba(0, 229, 255, 0.3),
+          transparent 40%
+        );
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      .hero-image-frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+        filter: contrast(1.1) brightness(0.9);
+      }
+
+      .badge-yellow {
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        background-color: var(--yellow);
+        color: var(--navy);
+        padding: 10px 18px;
+        font-size: 0.65rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        z-index: 2;
+        box-shadow: 0 10px 20px rgba(255, 183, 3, 0.3);
+      }
+
+      .hero-image-footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.65rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+      }
+
+      /* --- MARQUEE --- */
+      .marquee-wrapper {
+        background-color: var(--yellow);
+        padding: 18px 0;
+        overflow: hidden;
+        white-space: nowrap;
+        display: flex;
+        transform: rotate(-2deg) scale(1.05); /* Slight tilt for edgy look */
+        position: relative;
+        z-index: 10;
+        margin-top: -30px; /* Overlap hero slightly */
+      }
+      .marquee-content {
+        display: flex;
+        gap: 40px;
+        animation: scroll-marquee 25s linear infinite;
+        font-size: 0.75rem;
+        font-weight: 800;
+        color: var(--navy);
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+      }
+      .marquee-content span::after {
+        content: "✦";
+        margin-left: 40px;
+        font-size: 1rem;
+      }
+      @keyframes scroll-marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* --- THE COLLECTION --- */
+      .collection {
+        background-color: var(--bg-offwhite);
+        position: relative;
+      }
+
+      .collection-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 70px;
+      }
+      .collection-header-left {
+        max-width: 600px;
+      }
+      .collection-header p {
+        color: var(--text-light);
+        margin-top: 20px;
+        font-size: 1.05rem;
+      }
+
+      .link-arrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        border-bottom: 1px solid var(--text-dark);
+        padding-bottom: 6px;
+        transition: all 0.3s;
+      }
+      .link-arrow:hover {
+        color: var(--cyan);
+        border-color: var(--cyan);
+        gap: 12px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+
+      /* 3D Tilt Card */
+      .product-card {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.4s ease;
+        transform-style: preserve-3d;
+      }
+      .product-card:hover {
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+      }
+
+      .product-img {
+        position: relative;
+        height: 350px;
+        overflow: hidden;
+        background-color: #e9e9e9;
+      }
+      .product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s var(--ease-out);
+      }
+      .product-card:hover .product-img img {
+        transform: scale(1.08);
+      }
+
+      .product-tag {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: var(--yellow);
+        color: var(--navy);
+        padding: 5px 12px;
+        font-size: 0.65rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-info {
+        padding: 30px;
+        transform: translateZ(20px);
+      } /* 3D pop */
+
+      .product-info h3 {
+        font-family: var(--serif);
+        font-size: 2rem;
+        font-weight: 400;
+        margin: 10px 0 5px;
+      }
+      .product-info .desc {
+        font-size: 0.85rem;
+        color: var(--text-light);
+        margin-bottom: 25px;
+      }
+
+      .product-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+      }
+
+      .price {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--text-dark);
+      }
+      .price span {
+        font-size: 0.8rem;
+        color: var(--text-light);
+        font-weight: 400;
+      }
+
+      .circle-btn {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 1px solid #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s var(--ease-out);
+      }
+      .circle-btn i {
+        width: 18px;
+        height: 18px;
+        color: var(--text-dark);
+        transition: color 0.3s;
+      }
+
+      .product-card:hover .circle-btn {
+        background: var(--navy);
+        border-color: var(--navy);
+        transform: rotate(45deg);
+      }
+      .product-card:hover .circle-btn i {
+        color: white;
+      }
+
+      /* --- WHO WE SERVE --- */
+      .serve {
+        background-color: #fff;
+      }
+      .serve-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 80px;
+        align-items: center;
+      }
+
+      .serve-left p {
+        color: var(--text-light);
+        margin-top: 20px;
+        max-width: 400px;
+        font-size: 1.05rem;
+      }
+
+      .serve-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        grid-template-rows: 280px 280px;
+      }
+
+      .serve-card {
+        position: relative;
+        overflow: hidden;
+        display: block;
+      }
+      .serve-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s var(--ease-out);
+      }
+      .serve-card:hover img {
+        transform: scale(1.08);
+      }
       .serve-card::after {
         content: "";
         position: absolute;
         inset: 0;
-        border-radius: inherit;
-        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
-        pointer-events: none;
-      }
-      .serve-card .go {
-        opacity: 0;
-        transform: translateY(6px);
-        transition:
-          opacity 0.3s var(--ease),
-          transform 0.3s var(--ease);
-      }
-      .serve-card:hover .go,
-      .serve-card:focus-visible .go {
-        opacity: 1;
-        transform: none;
-      }
-      @media (hover: none) {
-        .serve-card .go {
-          opacity: 1;
-          transform: none;
-        }
+        background: linear-gradient(
+          to top,
+          rgba(6, 16, 31, 0.95) 0%,
+          rgba(6, 16, 31, 0.3) 60%,
+          transparent 100%
+        );
       }
 
-      /* Process connector */
-      .process-line {
-        position: relative;
-      }
-      .process-line::before {
-        content: "";
+      .serve-card-content {
         position: absolute;
-        top: 52px;
-        left: 17%;
-        right: 17%;
-        border-top: 2px dashed rgba(11, 95, 214, 0.28);
-        z-index: 0;
+        bottom: 30px;
+        left: 30px;
+        z-index: 2;
+        color: white;
+        transform: translateY(10px);
+        transition: transform 0.4s;
       }
-      @media (max-width: 767px) {
-        .process-line::before {
-          display: none;
-        }
-      }
-      .step-card {
-        transition:
-          transform 0.35s var(--ease),
-          box-shadow 0.35s var(--ease);
-      }
-      .step-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 24px 48px -24px rgba(7, 27, 66, 0.28);
+      .serve-card:hover .serve-card-content {
+        transform: translateY(0);
       }
 
-      /* Estimator */
-      .est-bg {
-        background:
-          radial-gradient(
-            ellipse 55% 70% at 100% 0%,
-            rgba(34, 211, 238, 0.18),
-            transparent 60%
-          ),
-          radial-gradient(
-            ellipse 50% 70% at 0% 100%,
-            rgba(11, 95, 214, 0.4),
-            transparent 60%
-          ),
-          var(--brand);
+      .serve-card-content h3 {
+        font-family: var(--serif);
+        font-size: 1.6rem;
+        font-weight: 400;
+        margin-bottom: 5px;
       }
-      .est-out {
-        background: linear-gradient(
-          145deg,
-          rgba(34, 211, 238, 0.16),
-          rgba(11, 95, 214, 0.18)
-        );
-        border: 1px solid rgba(34, 211, 238, 0.28);
-      }
-      .pulse-num {
-        animation: pulseNum 0.35s var(--ease);
-      }
-      @keyframes pulseNum {
-        from {
-          transform: scale(0.94);
-          opacity: 0.6;
-        }
-        to {
-          transform: none;
-          opacity: 1;
-        }
-      }
-      input[type="range"].est-range {
-        -webkit-appearance: none;
-        appearance: none;
-        height: 8px;
-        border-radius: 9999px;
-        background: linear-gradient(
-          90deg,
-          var(--cyan) var(--fill, 20%),
-          rgba(255, 255, 255, 0.18) var(--fill, 20%)
-        );
-        outline-offset: 6px;
-      }
-      input[type="range"].est-range::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        height: 26px;
-        width: 26px;
-        border-radius: 9999px;
-        background: #fff;
-        border: 5px solid var(--brand-2);
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-        cursor: grab;
-      }
-      input[type="range"].est-range::-moz-range-thumb {
-        height: 18px;
-        width: 18px;
-        border-radius: 9999px;
-        background: #fff;
-        border: 5px solid var(--brand-2);
-        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-        cursor: grab;
+      .serve-card-content p {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.6);
       }
 
-      /* Cards */
-      .testimonial-card {
-        background: linear-gradient(145deg, #ffffff, #f8fafc);
-        transition:
-          transform 0.35s var(--ease),
-          box-shadow 0.35s var(--ease);
+      .serve-card.stat-card {
+        background-color: var(--navy-light);
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.05);
       }
-      .testimonial-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 24px 48px -24px rgba(7, 27, 66, 0.28);
-      }
-      .why-item {
-        transition:
-          transform 0.3s var(--ease),
-          box-shadow 0.3s var(--ease),
-          border-color 0.3s;
-      }
-      .why-item:hover {
-        transform: translateY(-3px);
-        border-color: rgba(11, 95, 214, 0.35);
-        box-shadow: 0 16px 32px -20px rgba(7, 27, 66, 0.3);
-      }
-
-      /* CTA band */
-      .cta-band {
-        position: relative;
-        overflow: hidden;
-        background:
-          radial-gradient(
-            ellipse 60% 120% at 0% 50%,
-            rgba(11, 95, 214, 0.48),
-            transparent
-          ),
-          radial-gradient(
-            ellipse 50% 100% at 100% 50%,
-            rgba(34, 211, 238, 0.26),
-            transparent
-          ),
-          var(--brand);
-      }
-
-      /* FAQ */
-      .faq-item summary {
-        list-style: none;
-      }
-      .faq-item summary::-webkit-details-marker {
+      .serve-card.stat-card::after {
         display: none;
       }
-      .faq-icon {
-        transition: transform 0.28s var(--ease);
+
+      .stat-card h2 {
+        font-family: var(--serif);
+        font-size: 5rem;
+        color: var(--cyan);
+        line-height: 1;
+        margin-bottom: 10px;
       }
-      .faq-item[open] .faq-icon {
-        transform: rotate(45deg);
+      .stat-card p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+        line-height: 1.5;
       }
-      .faq-item[open] {
-        border-color: rgba(11, 95, 214, 0.35);
+      .stat-card a {
+        color: var(--yellow);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: gap 0.3s;
+      }
+      .stat-card a:hover {
+        gap: 12px;
       }
 
-      /* Scroll reveal (JS toggles .in) */
-      .rv {
+      /* --- BIG STATEMENT CTA --- */
+      .statement {
+        background-color: var(--navy);
+        padding: 160px 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Pulsing Glow behind text */
+      .statement::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(0, 229, 255, 0.1) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      .statement h2 {
+        font-family: var(--serif);
+        font-size: clamp(3rem, 6vw, 5rem);
+        color: white;
+        line-height: 1.1;
+        margin-bottom: 50px;
+        position: relative;
+        z-index: 2;
+      }
+      .statement h2 em {
+        color: var(--cyan);
+        font-style: italic;
+      }
+
+      /* --- FAQ --- */
+      .faq {
+        background-color: var(--bg-offwhite);
+      }
+      .faq-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 100px;
+      }
+      .faq-left p {
+        color: var(--text-light);
+        margin-top: 20px;
+        font-size: 1.05rem;
+      }
+
+      .faq-item {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .faq-question {
+        padding: 30px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-family: var(--serif);
+        font-size: 1.6rem;
+        color: var(--text-dark);
+        transition: color 0.3s;
+      }
+      .faq-question:hover {
+        color: var(--cyan);
+      }
+      .faq-question i {
+        transition: transform 0.4s var(--ease-out);
+        color: var(--text-light);
+        width: 24px;
+        height: 24px;
+      }
+
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s var(--ease-out);
+        color: var(--text-light);
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+      .faq-answer-inner {
+        padding-bottom: 30px;
+      }
+      .faq-item.active .faq-answer {
+        max-height: 250px;
+      }
+      .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+        color: var(--cyan);
+      }
+
+      /* --- FOOTER --- */
+      footer {
+        background-color: var(--navy);
+        color: white;
+        padding: 100px 0 40px;
+        position: relative;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+      }
+      .footer-brand .logo {
+        margin-bottom: 25px;
+      }
+      .footer-brand p {
+        color: rgba(255, 255, 255, 0.4);
+        font-size: 0.9rem;
+        max-width: 300px;
+      }
+
+      .footer-col h4 {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        color: var(--cyan);
+        margin-bottom: 30px;
+      }
+      .footer-col ul {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .footer-col a {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.9rem;
+        transition: color 0.3s;
+        position: relative;
+      }
+      .footer-col a:hover {
+        color: white;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.3);
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+      }
+      .footer-badges {
+        display: flex;
+        gap: 25px;
+      }
+
+      /* Floating WhatsApp */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        z-index: 1000;
+        transition: transform 0.3s var(--ease-out);
+      }
+      .whatsapp-float:hover {
+        transform: scale(1.1) rotate(10deg);
+      }
+      .whatsapp-float svg {
+        width: 32px;
+        height: 32px;
+        fill: white;
+      }
+
+      /* Scroll Reveal Classes */
+      .reveal {
         opacity: 0;
-        transform: translateY(20px);
-        transition:
-          opacity 0.7s var(--ease),
-          transform 0.7s var(--ease);
+        transform: translateY(40px);
+        transition: all 1s var(--ease-out);
       }
-      .rv.in {
+      .reveal.active {
         opacity: 1;
-        transform: none;
+        transform: translateY(0);
       }
 
-      /* Mobile sticky CTA */
-      .mobile-cta {
-        transform: translateY(110%);
-        transition: transform 0.35s var(--ease);
-        padding-bottom: max(12px, env(safe-area-inset-bottom));
-      }
-      .mobile-cta.show {
-        transform: none;
-      }
-      @media (max-width: 767px) {
-        .whatsapp-float {
-          bottom: calc(86px + env(safe-area-inset-bottom)) !important;
+      /* --- RESPONSIVE --- */
+      @media (max-width: 1024px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .hero-content p {
+          margin: 0 auto 40px;
+        }
+        .hero-buttons,
+        .hero-trust {
+          justify-content: center;
+        }
+        .hero-image-wrapper {
+          margin-top: 40px;
+        }
+        .serve-grid {
+          grid-template-columns: 1fr;
+        }
+        .faq-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+        }
+        .product-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .collection-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 20px;
         }
       }
 
-      /* Reduced motion */
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-        .rv {
-          opacity: 1 !important;
-          transform: none !important;
-          transition: none !important;
-        }
-        .hero-glow,
-        .bubble,
-        .marquee-track,
-        .hero-title .shine,
-        #products-grid:empty {
-          animation: none !important;
-        }
-        .bubble {
+      @media (max-width: 768px) {
+        .nav-links {
           display: none;
         }
-        .testimonial-card,
-        .step-card,
-        .why-item,
-        #products-grid > *,
-        .mobile-cta {
-          transition: none !important;
+        .hero {
+          padding-top: 150px;
         }
-      }
-
-      /* Prevent iOS tap highlight & smooth buttons */
-      .btn {
-        -webkit-tap-highlight-color: transparent;
-        will-change: transform;
-      }
-
-      /* Safe area for floating whatsapp */
-      .whatsapp-float {
-        bottom: max(20px, env(safe-area-inset-bottom));
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+        .serve-cards {
+          grid-template-columns: 1fr;
+          grid-template-rows: auto;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          gap: 20px;
+          text-align: center;
+        }
+        .marquee-wrapper {
+          transform: rotate(0) scale(1.1);
+          margin-top: 0;
+        }
       }
     </style>
   </head>
-  <body class="bg-white text-slate-800 antialiased overflow-x-hidden">
-    <a href="#main" class="skip-link">Skip to content</a>
-    <div id="progress" aria-hidden="true"></div>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-    <div id="site-header"></div>
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div class="container nav-inner">
+        <a href="#" class="logo">
+          <span class="logo-icon"></span>
+          OCEARA
+        </a>
+        <ul class="nav-links">
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="index.html#serve">Who We Serve</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-yellow magnetic">Get a Quote ↗</a>
+      </div>
+    </nav>
 
-    <main id="main">
-      <!-- ================= HERO ================= -->
-      <section class="hero-mesh relative overflow-hidden text-white">
-        <div class="hero-grid absolute inset-0" aria-hidden="true"></div>
-        <div
-          class="hero-glow -left-24 top-1/3 h-72 w-72 bg-cyan-400/15"
-          aria-hidden="true"
-        ></div>
-        <div
-          class="hero-glow -right-20 bottom-0 h-80 w-80 bg-blue-500/20"
-          style="animation-delay: -6s"
-          aria-hidden="true"
-        ></div>
-        <div class="bubbles" aria-hidden="true">
-          <span class="bubble" style="--x:6%;--s:14px;--t:13s;--d:0s"></span>
-          <span class="bubble" style="--x:17%;--s:26px;--t:17s;--d:-4s"></span>
-          <span class="bubble" style="--x:31%;--s:10px;--t:11s;--d:-8s"></span>
-          <span class="bubble" style="--x:46%;--s:20px;--t:15s;--d:-2s"></span>
-          <span class="bubble" style="--x:58%;--s:12px;--t:12s;--d:-6s"></span>
-          <span class="bubble" style="--x:71%;--s:30px;--t:19s;--d:-10s"></span>
-          <span class="bubble" style="--x:83%;--s:16px;--t:14s;--d:-3s"></span>
-          <span class="bubble" style="--x:93%;--s:22px;--t:16s;--d:-9s"></span>
-        </div>
-
-        <div
-          class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-16 lg:grid-cols-12 lg:gap-10 lg:pb-28 lg:pt-24"
-        >
-          <!-- Copy -->
-          <div class="lg:col-span-7">
-            <div
-              class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[11px] font-bold tracking-wide text-cyan-200 backdrop-blur sm:text-xs"
-            >
-              <span class="relative flex h-2 w-2" aria-hidden="true">
-                <span
-                  class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75"
-                ></span>
-                <span
-                  class="relative inline-flex h-2 w-2 rounded-full bg-cyan-400"
-                ></span>
-              </span>
-              Trusted by 500+ businesses across India
-            </div>
-
-            <h1 class="hero-title mt-6 max-w-2xl font-extrabold">
-              Reliable drinking water supply,
-              <span
-                class="shine bg-gradient-to-r from-cyan-300 via-blue-300 to-cyan-300 bg-clip-text text-transparent"
-              >
-                built for business.
-              </span>
-            </h1>
-
-            <p class="hero-sub mt-6 max-w-xl leading-8 text-slate-300">
-              AquaDrop supplies packaged drinking water to offices, hotels,
-              restaurants, events and retailers — with flexible bottle sizes,
-              bulk quantities and scheduled delivery that fits your operation.
-            </p>
-
-            <div
-              class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
-            >
-              <a
-                href="contact.html"
-                class="btn btn-primary group w-full !rounded-xl !px-7 !py-3.5 !text-[15px] shadow-lg shadow-blue-600/30 sm:w-auto"
-              >
-                Request a Business Quote
-                <i
-                  data-lucide="arrow-right"
-                  class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
-                ></i>
-              </a>
-              <a
-                href="products.html"
-                class="btn w-full !rounded-xl border border-white/25 bg-white/5 !px-7 !py-3.5 !text-[15px] font-semibold text-white backdrop-blur transition hover:bg-white/15 sm:w-auto"
-              >
-                <i data-lucide="package-search" class="h-4 w-4"></i>
-                Browse Products
-              </a>
-            </div>
-
-            <!-- Trust row -->
-            <ul
-              class="mt-9 grid grid-cols-1 gap-3 text-sm text-slate-300 sm:flex sm:flex-wrap sm:items-center sm:gap-x-7"
-            >
-              <li class="inline-flex items-center gap-2">
-                <i
-                  data-lucide="shield-check"
-                  class="h-4 w-4 shrink-0 text-cyan-300"
-                ></i>
-                FSSAI-compliant supply
-              </li>
-              <li class="inline-flex items-center gap-2">
-                <i
-                  data-lucide="clock-4"
-                  class="h-4 w-4 shrink-0 text-cyan-300"
-                ></i>
-                Same-week delivery
-              </li>
-              <li class="inline-flex items-center gap-2">
-                <i
-                  data-lucide="headset"
-                  class="h-4 w-4 shrink-0 text-cyan-300"
-                ></i>
-                Dedicated account manager
-              </li>
-            </ul>
-          </div>
-
-          <!-- Glass quote panel -->
-          <div class="lg:col-span-5">
-            <div
-              class="glass-panel relative rounded-3xl p-6 shadow-2xl shadow-black/30 sm:p-8"
-            >
-              <div
-                class="pointer-events-none absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-cyan-300/70 to-transparent"
-                aria-hidden="true"
-              ></div>
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <p class="eyebrow !text-cyan-300">Quick enquiry</p>
-                  <h2 class="mt-2 text-xl font-extrabold sm:text-2xl">
-                    Get a quote in 3 steps
-                  </h2>
-                </div>
-                <span
-                  class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-cyan-400/15 text-cyan-300"
-                >
-                  <i data-lucide="droplets" class="h-5 w-5"></i>
-                </span>
-              </div>
-
-              <ol class="mt-6 space-y-4 text-sm">
-                <li class="flex gap-3">
-                  <span
-                    class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-gradient-to-br from-blue-500 to-blue-700 text-xs font-extrabold text-white shadow-md shadow-blue-900/40"
-                    >1</span
-                  >
-                  <div>
-                    <p class="font-semibold text-white">
-                      Tell us your requirement
-                    </p>
-                    <p class="mt-0.5 text-slate-400">
-                      Bottle size, quantity &amp; location.
-                    </p>
-                  </div>
-                </li>
-                <li class="flex gap-3">
-                  <span
-                    class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-gradient-to-br from-blue-500 to-blue-700 text-xs font-extrabold text-white shadow-md shadow-blue-900/40"
-                    >2</span
-                  >
-                  <div>
-                    <p class="font-semibold text-white">
-                      Receive a tailored quote
-                    </p>
-                    <p class="mt-0.5 text-slate-400">
-                      Pricing based on volume &amp; schedule.
-                    </p>
-                  </div>
-                </li>
-                <li class="flex gap-3">
-                  <span
-                    class="mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-full bg-gradient-to-br from-blue-500 to-blue-700 text-xs font-extrabold text-white shadow-md shadow-blue-900/40"
-                    >3</span
-                  >
-                  <div>
-                    <p class="font-semibold text-white">Start your supply</p>
-                    <p class="mt-0.5 text-slate-400">
-                      One-time or recurring, on your terms.
-                    </p>
-                  </div>
-                </li>
-              </ol>
-
-              <a
-                href="contact.html"
-                class="btn btn-light mt-7 w-full !rounded-xl !py-3.5 !text-[15px]"
-              >
-                Start My Enquiry
-                <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
-              </a>
-              <p
-                class="mt-3 flex items-center justify-center gap-1.5 text-center text-xs text-slate-400"
-              >
-                <i data-lucide="lock" class="h-3 w-3"></i>
-                No commitment. Response within 1 business day.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Stats strip -->
-        <div
-          class="relative border-t border-white/10 bg-black/10 backdrop-blur"
-        >
-          <div
-            class="mx-auto grid max-w-7xl grid-cols-2 gap-5 px-5 py-7 sm:px-8 md:grid-cols-4 md:gap-6 md:py-8"
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span
+            class="eyebrow"
+            style="opacity: 0; animation: fadeIn 1s 0.2s forwards"
+            >Packaged Water • Delhi NCR</span
           >
-            <div class="stat-cell text-center md:text-left">
-              <p
-                class="stat-num text-2xl font-extrabold text-white sm:text-3xl"
-                data-count="500"
-              >
-                0
-              </p>
-              <p
-                class="mt-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400 sm:text-xs"
-              >
-                Business clients
-              </p>
-            </div>
-            <div class="stat-cell text-center md:text-left">
-              <p
-                class="stat-num text-2xl font-extrabold text-white sm:text-3xl"
-                data-count="12"
-                data-suffix="M+"
-              >
-                0
-              </p>
-              <p
-                class="mt-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400 sm:text-xs"
-              >
-                Bottles delivered
-              </p>
-            </div>
-            <div class="stat-cell text-center md:text-left">
-              <p
-                class="stat-num text-2xl font-extrabold text-white sm:text-3xl"
-                data-count="98"
-                data-suffix="%"
-              >
-                0
-              </p>
-              <p
-                class="mt-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400 sm:text-xs"
-              >
-                On-time delivery
-              </p>
-            </div>
-            <div class="stat-cell text-center md:text-left">
-              <p
-                class="stat-num text-2xl font-extrabold text-white sm:text-3xl"
-                data-count="24"
-                data-suffix="/7"
-              >
-                0
-              </p>
-              <p
-                class="mt-1 text-[10px] font-semibold uppercase tracking-wider text-slate-400 sm:text-xs"
-              >
-                Support window
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= INDUSTRY MARQUEE =================
-           ✏️ The old strip used random stock photos as "client logos", which can mislead visitors.
-           When you have real client logos (with permission), replace this block with:
-           <img src="assets/img/clients/name.svg" alt="Client name" class="h-8 w-auto" />
-      -->
-      <section
-        class="border-b border-slate-200 bg-white"
-        aria-label="Industries we supply"
-      >
-        <div class="mx-auto max-w-7xl px-5 py-7 sm:px-8 sm:py-9">
-          <p
-            class="text-center text-[10px] font-bold uppercase tracking-[.2em] text-slate-400 sm:text-xs"
-          >
-            Supplying water to
+          <h1>
+            <span class="reveal-text"
+              ><span class="delay-1">Pure hydration,</span></span
+            >
+            <span class="reveal-text"
+              ><span class="delay-2">delivered with</span></span
+            >
+            <span class="reveal-text"
+              ><span class="delay-3"><em>intent.</em></span></span
+            >
+          </h1>
+          <p>
+            Premium packaged drinking water for the places that care about every
+            detail — from first welcome to final toast.
           </p>
-          <div class="marquee mt-5">
-            <div class="marquee-track">
-              <span
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="building-2" class="h-4 w-4 text-blue-600"></i
-                >Corporate Offices</span
-              >
-              <span
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="hotel" class="h-4 w-4 text-blue-600"></i
-                >Hotels</span
-              >
-              <span
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i
-                  data-lucide="utensils-crossed"
-                  class="h-4 w-4 text-blue-600"
-                ></i
-                >Restaurants</span
-              >
-              <span
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="calendar-days" class="h-4 w-4 text-blue-600"></i
-                >Events &amp; Conferences</span
-              >
-              <span
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="store" class="h-4 w-4 text-blue-600"></i>Retail
-                &amp; Shops</span
-              >
-              <span
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="package" class="h-4 w-4 text-blue-600"></i>Bulk
-                orders</span
-              >
-              <span
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="repeat" class="h-4 w-4 text-blue-600"></i
-                >Recurring supply</span
-              >
-              <span
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="truck" class="h-4 w-4 text-blue-600"></i
-                >Scheduled delivery</span
-              >
-              <!-- duplicate for seamless loop -->
-              <span
-                aria-hidden="true"
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="building-2" class="h-4 w-4 text-blue-600"></i
-                >Corporate Offices</span
-              >
-              <span
-                aria-hidden="true"
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="hotel" class="h-4 w-4 text-blue-600"></i
-                >Hotels</span
-              >
-              <span
-                aria-hidden="true"
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i
-                  data-lucide="utensils-crossed"
-                  class="h-4 w-4 text-blue-600"
-                ></i
-                >Restaurants</span
-              >
-              <span
-                aria-hidden="true"
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="calendar-days" class="h-4 w-4 text-blue-600"></i
-                >Events &amp; Conferences</span
-              >
-              <span
-                aria-hidden="true"
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="store" class="h-4 w-4 text-blue-600"></i>Retail
-                &amp; Shops</span
-              >
-              <span
-                aria-hidden="true"
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="package" class="h-4 w-4 text-blue-600"></i>Bulk
-                orders</span
-              >
-              <span
-                aria-hidden="true"
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="repeat" class="h-4 w-4 text-blue-600"></i
-                >Recurring supply</span
-              >
-              <span
-                aria-hidden="true"
-                class="inline-flex shrink-0 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold text-slate-600"
-                ><i data-lucide="truck" class="h-4 w-4 text-blue-600"></i
-                >Scheduled delivery</span
-              >
+
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-yellow magnetic"
+              >Start a conversation ↗</a
+            >
+            <a href="#collection" class="btn btn-outline magnetic"
+              >Explore collection ↗</a
+            >
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-item">
+              <i data-lucide="shield-check"></i> FSSAI certified
+            </div>
+            <div class="trust-item">
+              <i data-lucide="factory"></i> Manufacturer direct
+            </div>
+            <div class="trust-item">
+              <i data-lucide="truck"></i> Scheduled NCR delivery
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- ================= PRODUCTS ================= -->
-      <section class="sec" id="products">
-        <div class="mx-auto max-w-7xl px-5 sm:px-8">
-          <div
-            class="rv mb-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between"
-          >
-            <div class="max-w-xl">
-              <p class="eyebrow">Our Product Range</p>
-              <h2 class="section-title">Choose the right bottle size.</h2>
-              <p class="section-copy">
-                From compact 250&nbsp;ml bottles for meetings to 2&nbsp;litre
-                formats for bulk requirements — pick a size and send us an
-                enquiry.
-              </p>
-            </div>
-            <a
-              class="inline-flex items-center gap-2 text-sm font-bold text-blue-700 transition hover:gap-3"
-              href="products.html"
-            >
-              View all products
-              <i data-lucide="arrow-right" class="h-4 w-4"></i>
-            </a>
-          </div>
-
-          <div
-            id="products-grid"
-            data-limit="4"
-            class="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4"
-          ></div>
-
-          <div
-            class="rv mt-8 grid gap-3 rounded-2xl border border-slate-200 bg-gradient-to-r from-slate-50 to-blue-50/50 px-5 py-4 text-sm font-semibold text-slate-600 sm:grid-cols-3 sm:gap-6"
-          >
-            <span class="inline-flex items-center gap-2.5"
-              ><span
-                class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-blue-100 text-blue-700"
-                ><i data-lucide="badge-check" class="h-4 w-4"></i></span
-              >Bulk pricing available</span
-            >
-            <span class="inline-flex items-center gap-2.5"
-              ><span
-                class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-blue-100 text-blue-700"
-                ><i data-lucide="truck" class="h-4 w-4"></i></span
-              >Scheduled delivery</span
-            >
-            <span class="inline-flex items-center gap-2.5"
-              ><span
-                class="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-blue-100 text-blue-700"
-                ><i data-lucide="recycle" class="h-4 w-4"></i></span
-              >Returnable packaging options</span
-            >
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= WHO WE SERVE ================= -->
-      <section class="sec bg-slate-50">
-        <div class="mx-auto max-w-7xl px-5 sm:px-8">
-          <div class="rv max-w-2xl">
-            <p class="eyebrow">Who We Serve</p>
-            <h2 class="section-title">
-              One point of contact for every water requirement.
-            </h2>
-            <p class="section-copy">
-              Every business is different. Share your quantity, location and
-              preferred schedule — we’ll discuss a suitable supply arrangement.
-            </p>
-          </div>
-
-          <div
-            class="mt-10 grid grid-cols-2 gap-4 sm:mt-12 sm:gap-6 lg:grid-cols-4"
-          >
-            <a
-              href="contact.html"
-              class="serve-card rv zoom group relative block overflow-hidden rounded-2xl img-fb aspect-[4/5] shadow-lg shadow-blue-900/10"
-              aria-label="Corporate Offices – request a quote"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=700&q=75"
-                alt="Corporate offices"
-                loading="lazy"
-                class="h-full w-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-[#071b42]/95 via-[#071b42]/25 to-transparent"
-              ></div>
-              <div class="absolute inset-x-0 bottom-0 p-4 text-white sm:p-5">
-                <span
-                  class="grid h-9 w-9 place-items-center rounded-xl bg-white/15 backdrop-blur sm:h-10 sm:w-10"
-                  ><i
-                    data-lucide="building-2"
-                    class="h-5 w-5 text-cyan-300"
-                  ></i
-                ></span>
-                <h3 class="mt-2 text-sm font-extrabold sm:mt-3 sm:text-lg">
-                  Corporate Offices
-                </h3>
-                <p class="mt-1 hidden text-sm text-slate-200 sm:block">
-                  For teams, meetings and visitors.
-                </p>
-                <span
-                  class="go mt-2 inline-flex items-center gap-1 text-xs font-bold text-cyan-300 sm:text-sm"
-                  >Get a quote <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i
-                ></span>
-              </div>
-            </a>
-            <a
-              href="contact.html"
-              style="transition-delay: 0.08s"
-              class="serve-card rv zoom group relative block overflow-hidden rounded-2xl img-fb aspect-[4/5] shadow-lg shadow-blue-900/10"
-              aria-label="Hotels and Restaurants – request a quote"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=700&q=75"
-                alt="Hotels and restaurants"
-                loading="lazy"
-                class="h-full w-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-[#071b42]/95 via-[#071b42]/25 to-transparent"
-              ></div>
-              <div class="absolute inset-x-0 bottom-0 p-4 text-white sm:p-5">
-                <span
-                  class="grid h-9 w-9 place-items-center rounded-xl bg-white/15 backdrop-blur sm:h-10 sm:w-10"
-                  ><i data-lucide="hotel" class="h-5 w-5 text-cyan-300"></i
-                ></span>
-                <h3 class="mt-2 text-sm font-extrabold sm:mt-3 sm:text-lg">
-                  Hotels &amp; Restaurants
-                </h3>
-                <p class="mt-1 hidden text-sm text-slate-200 sm:block">
-                  For guest rooms, dining and service areas.
-                </p>
-                <span
-                  class="go mt-2 inline-flex items-center gap-1 text-xs font-bold text-cyan-300 sm:text-sm"
-                  >Get a quote <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i
-                ></span>
-              </div>
-            </a>
-            <a
-              href="contact.html"
-              style="transition-delay: 0.16s"
-              class="serve-card rv zoom group relative block overflow-hidden rounded-2xl img-fb aspect-[4/5] shadow-lg shadow-blue-900/10"
-              aria-label="Events and Conferences – request a quote"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=700&q=75"
-                alt="Events and conferences"
-                loading="lazy"
-                class="h-full w-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-[#071b42]/95 via-[#071b42]/25 to-transparent"
-              ></div>
-              <div class="absolute inset-x-0 bottom-0 p-4 text-white sm:p-5">
-                <span
-                  class="grid h-9 w-9 place-items-center rounded-xl bg-white/15 backdrop-blur sm:h-10 sm:w-10"
-                  ><i
-                    data-lucide="calendar-days"
-                    class="h-5 w-5 text-cyan-300"
-                  ></i
-                ></span>
-                <h3 class="mt-2 text-sm font-extrabold sm:mt-3 sm:text-lg">
-                  Events &amp; Conferences
-                </h3>
-                <p class="mt-1 hidden text-sm text-slate-200 sm:block">
-                  For conferences, celebrations and gatherings.
-                </p>
-                <span
-                  class="go mt-2 inline-flex items-center gap-1 text-xs font-bold text-cyan-300 sm:text-sm"
-                  >Get a quote <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i
-                ></span>
-              </div>
-            </a>
-            <a
-              href="contact.html"
-              style="transition-delay: 0.24s"
-              class="serve-card rv zoom group relative block overflow-hidden rounded-2xl img-fb aspect-[4/5] shadow-lg shadow-blue-900/10"
-              aria-label="Retail and Shops – request a quote"
-            >
-              <img
-                src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=700&q=75"
-                alt="Retail businesses"
-                loading="lazy"
-                class="h-full w-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-[#071b42]/95 via-[#071b42]/25 to-transparent"
-              ></div>
-              <div class="absolute inset-x-0 bottom-0 p-4 text-white sm:p-5">
-                <span
-                  class="grid h-9 w-9 place-items-center rounded-xl bg-white/15 backdrop-blur sm:h-10 sm:w-10"
-                  ><i data-lucide="store" class="h-5 w-5 text-cyan-300"></i
-                ></span>
-                <h3 class="mt-2 text-sm font-extrabold sm:mt-3 sm:text-lg">
-                  Retail &amp; Shops
-                </h3>
-                <p class="mt-1 hidden text-sm text-slate-200 sm:block">
-                  For stores and local business requirements.
-                </p>
-                <span
-                  class="go mt-2 inline-flex items-center gap-1 text-xs font-bold text-cyan-300 sm:text-sm"
-                  >Get a quote <i data-lucide="arrow-right" class="h-3.5 w-3.5"></i
-                ></span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= PROCESS ================= -->
-      <section class="sec">
-        <div class="mx-auto max-w-7xl px-5 sm:px-8">
-          <div class="rv mx-auto max-w-2xl text-center">
-            <p class="eyebrow">How It Works</p>
-            <h2 class="section-title">A simple, transparent process.</h2>
-            <p class="section-copy mx-auto">
-              From your first enquiry to your first delivery — here’s exactly
-              what to expect.
-            </p>
-          </div>
-
-          <ol
-            class="process-line mt-10 grid gap-6 sm:mt-14 sm:gap-8 md:grid-cols-3"
-          >
-            <li
-              class="step-card rv relative z-10 rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-7 md:text-left"
-            >
-              <span
-                class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[#0b5fd6] to-[#071b42] text-white shadow-lg shadow-blue-900/25 md:mx-0"
-                ><i data-lucide="message-square-text" class="h-6 w-6"></i
-              ></span>
-              <p
-                class="mt-5 text-[11px] font-bold uppercase tracking-widest text-blue-600"
-              >
-                Step 1
-              </p>
-              <h3 class="mt-1 text-lg font-extrabold text-[#071b42]">
-                Share your requirement
-              </h3>
-              <p class="mt-2 text-sm leading-6 text-slate-500">
-                Tell us your preferred bottle size, estimated quantity and
-                delivery location. The more detail, the faster we can quote.
-              </p>
-            </li>
-            <li
-              style="transition-delay: 0.1s"
-              class="step-card rv relative z-10 rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-7 md:text-left"
-            >
-              <span
-                class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[#0b5fd6] to-[#071b42] text-white shadow-lg shadow-blue-900/25 md:mx-0"
-                ><i data-lucide="phone-call" class="h-6 w-6"></i
-              ></span>
-              <p
-                class="mt-5 text-[11px] font-bold uppercase tracking-widest text-blue-600"
-              >
-                Step 2
-              </p>
-              <h3 class="mt-1 text-lg font-extrabold text-[#071b42]">
-                Receive a follow-up
-              </h3>
-              <p class="mt-2 text-sm leading-6 text-slate-500">
-                Our team contacts you to discuss product availability, pricing
-                and the best delivery arrangement for your business.
-              </p>
-            </li>
-            <li
-              style="transition-delay: 0.2s"
-              class="step-card rv relative z-10 rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm sm:p-7 md:text-left"
-            >
-              <span
-                class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br from-[#0b5fd6] to-[#071b42] text-white shadow-lg shadow-blue-900/25 md:mx-0"
-                ><i data-lucide="calendar-check" class="h-6 w-6"></i
-              ></span>
-              <p
-                class="mt-5 text-[11px] font-bold uppercase tracking-widest text-blue-600"
-              >
-                Step 3
-              </p>
-              <h3 class="mt-1 text-lg font-extrabold text-[#071b42]">
-                Plan your supply
-              </h3>
-              <p class="mt-2 text-sm leading-6 text-slate-500">
-                Agree a one-time order or a recurring supply schedule that suits
-                your team’s day-to-day operations.
-              </p>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- ================= ESTIMATOR ================= -->
-      <section id="estimator" class="sec est-bg relative overflow-hidden text-white">
-        <div class="mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:gap-14">
-          <div class="rv lg:col-span-5">
-            <p class="eyebrow !text-cyan-300">Plan Your Supply</p>
-            <h2 class="section-title !text-white">
-              Estimate your monthly water requirement.
-            </h2>
-            <p class="section-copy !text-slate-300">
-              Not sure how much you need? Use this quick estimator to get a
-              starting figure, then send it to us with your enquiry.
-            </p>
-            <ul class="mt-6 space-y-3 text-sm text-slate-300">
-              <li class="flex items-start gap-3">
-                <i data-lucide="check-circle-2" class="mt-0.5 h-5 w-5 shrink-0 text-cyan-300"></i>
-                Takes under 30 seconds
-              </li>
-              <li class="flex items-start gap-3">
-                <i data-lucide="check-circle-2" class="mt-0.5 h-5 w-5 shrink-0 text-cyan-300"></i>
-                Your figures are pre-filled into the enquiry form
-              </li>
-              <li class="flex items-start gap-3">
-                <i data-lucide="check-circle-2" class="mt-0.5 h-5 w-5 shrink-0 text-cyan-300"></i>
-                Final quantity and pricing are confirmed by our team
-              </li>
-            </ul>
-          </div>
-
-          <form
-            id="estForm"
-            class="rv glass-panel rounded-3xl p-5 shadow-2xl shadow-black/30 sm:p-8 lg:col-span-7"
-            style="transition-delay: 0.1s"
-            onsubmit="return false"
-          >
-            <div class="grid gap-7">
-              <!-- People -->
-              <div>
-                <div class="flex items-end justify-between gap-4">
-                  <label for="estPeople" class="text-sm font-bold">People / guests per day</label>
-                  <output id="estPeopleOut" for="estPeople" class="fh text-2xl font-extrabold text-cyan-300">25</output>
-                </div>
-                <input
-                  id="estPeople"
-                  type="range"
-                  min="5"
-                  max="500"
-                  step="5"
-                  value="25"
-                  class="est-range mt-3 w-full cursor-pointer"
-                />
-                <div class="mt-1 flex justify-between text-[11px] text-slate-400">
-                  <span>5</span><span>500+</span>
-                </div>
-              </div>
-
-              <!-- Bottles per person -->
-              <fieldset>
-                <legend class="text-sm font-bold">Bottles per person, per day</legend>
-                <div class="mt-3 grid grid-cols-4 gap-2" id="estPerDay">
-                  <label class="cursor-pointer">
-                    <input type="radio" name="perDay" value="1" class="peer sr-only" />
-                    <span class="grid place-items-center rounded-xl border border-white/20 bg-white/5 py-3 text-sm font-bold transition hover:bg-white/10 peer-checked:border-white peer-checked:bg-white peer-checked:text-[#071b42] peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-300">1</span>
-                  </label>
-                  <label class="cursor-pointer">
-                    <input type="radio" name="perDay" value="2" class="peer sr-only" checked />
-                    <span class="grid place-items-center rounded-xl border border-white/20 bg-white/5 py-3 text-sm font-bold transition hover:bg-white/10 peer-checked:border-white peer-checked:bg-white peer-checked:text-[#071b42] peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-300">2</span>
-                  </label>
-                  <label class="cursor-pointer">
-                    <input type="radio" name="perDay" value="3" class="peer sr-only" />
-                    <span class="grid place-items-center rounded-xl border border-white/20 bg-white/5 py-3 text-sm font-bold transition hover:bg-white/10 peer-checked:border-white peer-checked:bg-white peer-checked:text-[#071b42] peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-300">3</span>
-                  </label>
-                  <label class="cursor-pointer">
-                    <input type="radio" name="perDay" value="4" class="peer sr-only" />
-                    <span class="grid place-items-center rounded-xl border border-white/20 bg-white/5 py-3 text-sm font-bold transition hover:bg-white/10 peer-checked:border-white peer-checked:bg-white peer-checked:text-[#071b42] peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-300">4</span>
-                  </label>
-                </div>
-              </fieldset>
-
-              <!-- Size -->
-              <fieldset>
-                <legend class="text-sm font-bold">Bottle size</legend>
-                <div class="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4" id="estSize">
-                  <label class="cursor-pointer">
-                    <input type="radio" name="size" value="250" class="peer sr-only" />
-                    <span class="grid place-items-center rounded-xl border border-white/20 bg-white/5 py-3 text-sm font-bold transition hover:bg-white/10 peer-checked:border-white peer-checked:bg-white peer-checked:text-[#071b42] peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-300">250&nbsp;ml</span>
-                  </label>
-                  <label class="cursor-pointer">
-                    <input type="radio" name="size" value="500" class="peer sr-only" checked />
-                    <span class="grid place-items-center rounded-xl border border-white/20 bg-white/5 py-3 text-sm font-bold transition hover:bg-white/10 peer-checked:border-white peer-checked:bg-white peer-checked:text-[#071b42] peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-300">500&nbsp;ml</span>
-                  </label>
-                  <label class="cursor-pointer">
-                    <input type="radio" name="size" value="1000" class="peer sr-only" />
-                    <span class="grid place-items-center rounded-xl border border-white/20 bg-white/5 py-3 text-sm font-bold transition hover:bg-white/10 peer-checked:border-white peer-checked:bg-white peer-checked:text-[#071b42] peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-300">1&nbsp;litre</span>
-                  </label>
-                  <label class="cursor-pointer">
-                    <input type="radio" name="size" value="2000" class="peer sr-only" />
-                    <span class="grid place-items-center rounded-xl border border-white/20 bg-white/5 py-3 text-sm font-bold transition hover:bg-white/10 peer-checked:border-white peer-checked:bg-white peer-checked:text-[#071b42] peer-focus-visible:ring-2 peer-focus-visible:ring-cyan-300">2&nbsp;litre</span>
-                  </label>
-                </div>
-              </fieldset>
-
-              <!-- Days -->
-              <div>
-                <label for="estDays" class="text-sm font-bold">Supply days per month</label>
-                <select
-                  id="estDays"
-                  class="mt-3 w-full rounded-xl border border-white/20 bg-white/5 px-4 py-3 text-sm font-semibold text-white outline-none transition focus:border-cyan-300"
-                >
-                  <option value="22" class="text-slate-900">22 days (Mon – Fri)</option>
-                  <option value="26" class="text-slate-900" selected>26 days (Mon – Sat)</option>
-                  <option value="30" class="text-slate-900">30 days (every day)</option>
-                </select>
-              </div>
-
-              <!-- Result -->
-              <div class="est-out rounded-2xl p-5" aria-live="polite">
-                <p class="text-xs font-bold uppercase tracking-widest text-cyan-300">
-                  Estimated monthly requirement
-                </p>
-                <div class="mt-3 grid grid-cols-3 gap-3 text-center sm:text-left">
-                  <div>
-                    <p id="estBottles" class="fh text-2xl font-extrabold sm:text-3xl">—</p>
-                    <p class="mt-0.5 text-[11px] font-semibold text-slate-300 sm:text-xs">Bottles</p>
-                  </div>
-                  <div>
-                    <p id="estLitres" class="fh text-2xl font-extrabold sm:text-3xl">—</p>
-                    <p class="mt-0.5 text-[11px] font-semibold text-slate-300 sm:text-xs">Litres</p>
-                  </div>
-                  <div>
-                    <p id="estDaily" class="fh text-2xl font-extrabold sm:text-3xl">—</p>
-                    <p class="mt-0.5 text-[11px] font-semibold text-slate-300 sm:text-xs">Bottles / day</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-                <a
-                  id="estCta"
-                  href="contact.html"
-                  class="btn btn-light w-full !rounded-xl !py-3.5 !text-[15px] sm:w-auto sm:!px-7"
-                >
-                  Send This Estimate With My Enquiry
-                  <i data-lucide="arrow-right" class="h-4 w-4"></i>
-                </a>
-                <p class="text-xs text-slate-400">
-                  Indicative only. Final quantities &amp; pricing are confirmed by our team.
-                </p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </section>
-
-      <!-- ================= WHY AQUADROP ================= -->
-      <section class="sec bg-slate-50">
-        <div
-          class="mx-auto grid max-w-7xl items-center gap-10 px-5 sm:px-8 sm:gap-12 lg:grid-cols-2 lg:gap-14"
-        >
-          <div class="rv relative order-2 lg:order-1">
-            <div
-              class="absolute -inset-3 -z-0 rounded-[2rem] bg-gradient-to-br from-blue-100 to-cyan-100 opacity-70 blur-xl"
-              aria-hidden="true"
-            ></div>
+        <div class="hero-image-wrapper">
+          <div class="badge-yellow">↗ Pure. Daily.</div>
+          <div class="hero-image-frame" id="tiltImage">
             <img
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000&q=75"
-              alt="Business team in a modern office"
-              loading="lazy"
-              class="relative aspect-[5/4] w-full rounded-2xl object-cover img-fb shadow-2xl shadow-blue-900/10"
+              src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?q=80&w=1000&auto=format&fit=crop"
+              alt="Water splash"
             />
-            <div
-              class="absolute -bottom-6 -right-3 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl sm:p-5"
-            >
-              <div class="flex items-center gap-3">
-                <span
-                  class="grid h-10 w-10 place-items-center rounded-xl bg-emerald-50 text-emerald-600 sm:h-11 sm:w-11"
-                  ><i data-lucide="trending-up" class="h-5 w-5"></i
-                ></span>
-                <div>
-                  <p class="text-xl font-extrabold text-[#071b42] sm:text-2xl">98%</p>
-                  <p class="text-[11px] font-semibold text-slate-500 sm:text-xs">
-                    On-time delivery rate
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
-
-          <div class="rv order-1 lg:order-2">
-            <p class="eyebrow">Why AquaDrop</p>
-            <h2 class="section-title">Built around your business needs.</h2>
-            <p class="section-copy">
-              We understand that water supply is an operational need, not just a
-              purchase. That’s why our approach focuses on clarity, flexibility
-              and consistency.
-            </p>
-
-            <div class="mt-7 grid gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
-              <div class="why-item flex gap-3 rounded-xl border border-slate-200 bg-white p-4">
-                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-600">
-                  <i data-lucide="package-check" class="h-5 w-5"></i>
-                </span>
-                <div>
-                  <h3 class="font-bold">Bottle size options</h3>
-                  <p class="mt-1 text-sm text-slate-500">
-                    Pack sizes to suit your use case.
-                  </p>
-                </div>
-              </div>
-              <div class="why-item flex gap-3 rounded-xl border border-slate-200 bg-white p-4">
-                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-600">
-                  <i data-lucide="boxes" class="h-5 w-5"></i>
-                </span>
-                <div>
-                  <h3 class="font-bold">Bulk order enquiries</h3>
-                  <p class="mt-1 text-sm text-slate-500">
-                    Quotations based on quantity.
-                  </p>
-                </div>
-              </div>
-              <div class="why-item flex gap-3 rounded-xl border border-slate-200 bg-white p-4">
-                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-600">
-                  <i data-lucide="calendar-clock" class="h-5 w-5"></i>
-                </span>
-                <div>
-                  <h3 class="font-bold">Planned supply</h3>
-                  <p class="mt-1 text-sm text-slate-500">
-                    One-time or recurring schedules.
-                  </p>
-                </div>
-              </div>
-              <div class="why-item flex gap-3 rounded-xl border border-slate-200 bg-white p-4">
-                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-blue-50 text-blue-600">
-                  <i data-lucide="messages-square" class="h-5 w-5"></i>
-                </span>
-                <div>
-                  <h3 class="font-bold">Direct communication</h3>
-                  <p class="mt-1 text-sm text-slate-500">
-                    Talk to our team directly.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <a class="btn btn-dark mt-8 w-full sm:w-auto" href="contact.html">
-              Discuss Your Requirements
-              <i data-lucide="arrow-right" class="h-4 w-4"></i>
-            </a>
+          <div class="hero-image-footer">
+            <span>01 / 03</span>
+            <span>The Oceara Standard</span>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- ================= TESTIMONIALS ================= -->
-      <section class="sec">
-        <div class="mx-auto max-w-7xl px-5 sm:px-8">
-          <div class="rv max-w-2xl">
-            <p class="eyebrow">Client Feedback</p>
-            <h2 class="section-title">What businesses say.</h2>
-            <p class="section-copy">
-              A few words from teams we supply across offices, hospitality and
-              events.
-            </p>
-          </div>
-
-          <div class="mt-10 grid gap-5 sm:mt-12 sm:gap-6 md:grid-cols-3">
-            <figure
-              class="testimonial-card rv relative overflow-hidden rounded-2xl border border-slate-200 p-6 shadow-sm sm:p-7"
-            >
-              <i data-lucide="quote" class="absolute right-5 top-5 h-12 w-12 text-blue-100" aria-hidden="true"></i>
-              <div class="relative flex gap-1 text-amber-400" role="img" aria-label="5 out of 5 stars">
-                <i data-lucide="star" class="h-4 w-4 fill-current"></i
-                ><i data-lucide="star" class="h-4 w-4 fill-current"></i
-                ><i data-lucide="star" class="h-4 w-4 fill-current"></i
-                ><i data-lucide="star" class="h-4 w-4 fill-current"></i
-                ><i data-lucide="star" class="h-4 w-4 fill-current"></i>
-              </div>
-              <blockquote class="relative mt-4 text-sm leading-7 text-slate-600">
-                “AquaDrop made setting up a recurring supply for our office
-                effortless. Clear communication and reliable delivery every
-                week.”
-              </blockquote>
-              <figcaption class="relative mt-5 flex items-center gap-3">
-                <span
-                  class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-blue-100 text-sm font-extrabold text-blue-700"
-                  >RS</span
-                >
-                <div>
-                  <p class="text-sm font-bold text-[#071b42]">Rahul Sharma</p>
-                  <p class="text-xs text-slate-500">
-                    Facilities Manager, TechNova
-                  </p>
-                </div>
-              </figcaption>
-            </figure>
-
-            <figure
-              style="transition-delay: 0.1s"
-              class="testimonial-card rv relative overflow-hidden rounded-2xl border border-slate-200 p-6 shadow-sm sm:p-7"
-            >
-              <i data-lucide="quote" class="absolute right-5 top-5 h-12 w-12 text-cyan-100" aria-hidden="true"></i>
-              <div class="relative flex gap-1 text-amber-400" role="img" aria-label="5 out of 5 stars">
-                <i data-lucide="star" class="h-4 w-4 fill-current"></i
-                ><i data-lucide="star" class="h-4 w-4 fill-current"></i
-                ><i data-lucide="star" class="h-4 w-4 fill-current"></i
-                ><i data-lucide="star" class="h-4 w-4 fill-current"></i
-                ><i data-lucide="star" class="h-4 w-4 fill-current"></i>
-              </div>
-              <blockquote class="relative mt-4 text-sm leading-7 text-slate-600">
-                “We needed bulk water for a three-day conference at short
-                notice. The team handled the quotation and delivery planning
-                quickly.”
-              </blockquote>
-              <figcaption class="relative mt-5 flex items-center gap-3">
-                <span
-                  class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-cyan-100 text-sm font-extrabold text-cyan-700"
-                  >PK</span
-                >
-                <div>
-                  <p class="text-sm font-bold text-[#071b42]">Priya Kapoor</p>
-                  <p class="text-xs text-slate-500">
-                    Event Lead, Horizon Events
-                  </p>
-                </div>
-              </figcaption>
-            </figure>
-
-            <figure
-              style="transition-delay: 0.2s"
-              class="testimonial-card rv relative overflow-hidden rounded-2xl border border-slate-200 p-6 shadow-sm sm:p-7"
-            >
-              <i data-lucide="quote" class="absolute right-5 top-5 h-12 w-12 text-emerald-100" aria-hidden="true"></i>
-              <div class="relative flex gap-1 text-amber-400" role="img" aria-label="5 out of 5 stars">
-                <i data-lucide="star" class="h-4 w-4 fill-current"></i
-                ><i data-lucide="star" class="h-4 w-4 fill-current"></i
-                ><i data-lucide="star" class="h-4 w-4 fill-current"></i
-                ><i data-lucide="star" class="h-4 w-4 fill-current"></i
-                ><i data-lucide="star" class="h-4 w-4 fill-current"></i>
-              </div>
-              <blockquote class="relative mt-4 text-sm leading-7 text-slate-600">
-                “The 500&nbsp;ml bottles are perfect for our restaurant service
-                areas. Simple ordering, and the delivery window always works for
-                us.”
-              </blockquote>
-              <figcaption class="relative mt-5 flex items-center gap-3">
-                <span
-                  class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-emerald-100 text-sm font-extrabold text-emerald-700"
-                  >AM</span
-                >
-                <div>
-                  <p class="text-sm font-bold text-[#071b42]">Arjun Mehta</p>
-                  <p class="text-xs text-slate-500">Owner, The Olive Table</p>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-          <!-- ✏️ Remove this note once the reviews above are genuine -->
-          <p class="mt-6 text-center text-xs text-slate-400">
-            Sample feedback shown for layout — replace with genuine client
-            reviews before publishing.
-          </p>
-        </div>
-      </section>
-
-      <!-- ================= FAQ ================= -->
-      <section class="sec bg-slate-50">
-        <div
-          class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 sm:gap-12 lg:grid-cols-12"
-        >
-          <div class="rv lg:col-span-4">
-            <p class="eyebrow">FAQs</p>
-            <h2 class="section-title">Questions, answered.</h2>
-            <p class="section-copy">
-              Common questions about ordering, delivery and bulk supply.
-            </p>
-            <a href="contact.html" class="btn btn-primary mt-6 w-full sm:w-auto"
-              >Ask a Question</a
-            >
-          </div>
-          <div id="faqList" class="space-y-3 sm:space-y-4 lg:col-span-8">
-            <details
-              class="faq-item rv group rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition open:shadow-md"
-            >
-              <summary
-                class="flex cursor-pointer items-center justify-between gap-4 text-sm font-bold text-[#071b42] sm:text-base"
-              >
-                What is the minimum order quantity?
-                <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-blue-50 text-blue-600">
-                  <i data-lucide="plus" class="faq-icon h-4 w-4"></i>
-                </span>
-              </summary>
-              <p class="mt-3 text-sm leading-7 text-slate-600">
-                Minimum quantities vary by bottle size and delivery location.
-                Share your requirement through the enquiry form and our team
-                will confirm the minimum for your area.
-              </p>
-            </details>
-            <details
-              class="faq-item rv group rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition open:shadow-md"
-            >
-              <summary
-                class="flex cursor-pointer items-center justify-between gap-4 text-sm font-bold text-[#071b42] sm:text-base"
-              >
-                Do you offer recurring supply for offices?
-                <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-blue-50 text-blue-600">
-                  <i data-lucide="plus" class="faq-icon h-4 w-4"></i>
-                </span>
-              </summary>
-              <p class="mt-3 text-sm leading-7 text-slate-600">
-                Yes. We can arrange daily, weekly or monthly supply based on
-                your team size and consumption. Your account manager will help
-                define a schedule that avoids running out.
-              </p>
-            </details>
-            <details
-              class="faq-item rv group rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition open:shadow-md"
-            >
-              <summary
-                class="flex cursor-pointer items-center justify-between gap-4 text-sm font-bold text-[#071b42] sm:text-base"
-              >
-                How quickly can a delivery be arranged?
-                <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-blue-50 text-blue-600">
-                  <i data-lucide="plus" class="faq-icon h-4 w-4"></i>
-                </span>
-              </summary>
-              <p class="mt-3 text-sm leading-7 text-slate-600">
-                For most service areas, deliveries can be scheduled within the
-                same week. Urgent requirements are handled on a case-by-case
-                basis depending on stock and routing.
-              </p>
-            </details>
-            <details
-              class="faq-item rv group rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition open:shadow-md"
-            >
-              <summary
-                class="flex cursor-pointer items-center justify-between gap-4 text-sm font-bold text-[#071b42] sm:text-base"
-              >
-                Can I request a custom bottle size or label?
-                <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-blue-50 text-blue-600">
-                  <i data-lucide="plus" class="faq-icon h-4 w-4"></i>
-                </span>
-              </summary>
-              <p class="mt-3 text-sm leading-7 text-slate-600">
-                We currently offer standard bottle sizes listed on our products
-                page. For custom labelling or large corporate orders, contact us
-                to discuss what’s possible.
-              </p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= FINAL CTA ================= -->
-      <section class="cta-band">
-        <div class="bubbles" aria-hidden="true">
-          <span class="bubble" style="--x:8%;--s:18px;--t:14s;--d:-2s"></span>
-          <span class="bubble" style="--x:28%;--s:12px;--t:11s;--d:-7s"></span>
-          <span class="bubble" style="--x:52%;--s:24px;--t:17s;--d:-4s"></span>
-          <span class="bubble" style="--x:76%;--s:14px;--t:13s;--d:-9s"></span>
-          <span class="bubble" style="--x:92%;--s:20px;--t:15s;--d:-1s"></span>
-        </div>
-        <div
-          class="relative mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-5 py-14 text-center sm:px-8 sm:py-16 md:flex-row md:text-left"
-        >
-          <div>
-            <p class="eyebrow !text-cyan-300">Ready to get started?</p>
-            <h2
-              class="mt-2 text-2xl font-extrabold text-white sm:text-3xl md:text-4xl"
-            >
-              Need water for your business?
-            </h2>
-            <p class="mt-3 max-w-xl text-sm text-slate-300 sm:text-base">
-              Share your requirement and we’ll get back to you with a quote and
-              delivery plan. No commitment required.
-            </p>
-          </div>
-          <div
-            class="flex w-full flex-col items-stretch gap-3 sm:w-auto sm:flex-row sm:items-center"
-          >
-            <a
-              href="contact.html"
-              class="btn btn-light !rounded-xl !px-7 !py-3.5 !text-[15px]"
-            >
-              Request a Business Quote
-              <i data-lucide="arrow-right" class="h-4 w-4"></i>
-            </a>
-            <!-- ✏️ Replace +91XXXXXXXXXX with the real phone number -->
-            <a
-              href="tel:+91XXXXXXXXXX"
-              class="btn !rounded-xl border border-white/25 !px-7 !py-3.5 !text-[15px] font-semibold text-white transition hover:bg-white/10"
-            >
-              <i data-lucide="phone" class="h-4 w-4"></i> Call Us
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <div id="site-footer"></div>
-
-    <!-- Mobile sticky CTA (hidden on md+) -->
-    <div
-      id="mobileCta"
-      class="mobile-cta fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 px-4 pt-3 shadow-[0_-10px_30px_-12px_rgba(7,27,66,0.25)] backdrop-blur md:hidden"
-    >
-      <div class="mx-auto flex max-w-md gap-3">
-        <a
-          href="tel:+91XXXXXXXXXX"
-          class="inline-flex flex-1 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white py-3 text-sm font-bold text-[#071b42]"
-        >
-          <i data-lucide="phone" class="h-4 w-4"></i> Call
-        </a>
-        <a
-          href="contact.html"
-          class="inline-flex flex-[1.6] items-center justify-center gap-2 rounded-xl bg-[#0b5fd6] py-3 text-sm font-bold text-white shadow-lg shadow-blue-600/30"
-        >
-          Get a Quote <i data-lucide="arrow-right" class="h-4 w-4"></i>
-        </a>
+    <!-- MARQUEE -->
+    <div class="marquee-wrapper">
+      <div class="marquee-content">
+        <span>Pure by design</span>
+        <span>Delivered with intent</span>
+        <span>Delhi NCR</span>
+        <span>Pure by design</span>
+        <span>Delivered with intent</span>
+        <span>Delhi NCR</span>
+        <span>Pure by design</span>
+        <span>Delivered with intent</span>
+        <span>Delhi NCR</span>
+        <span>Pure by design</span>
+        <span>Delivered with intent</span>
+        <span>Delhi NCR</span>
       </div>
     </div>
-    <div class="h-16 md:hidden" aria-hidden="true"></div>
 
-    <script src="assets/js/script.js"></script>
+    <!-- THE COLLECTION -->
+    <section class="collection section-padding" id="collection">
+      <div class="container">
+        <div class="collection-header reveal">
+          <div class="collection-header-left">
+            <span class="eyebrow dark">The Collection</span>
+            <h2 class="heading-serif">A considered size for every setting</h2>
+            <p>
+              Five formats, one uncompromising standard. Choose the right
+              silhouette for your guests, team or table.
+            </p>
+          </div>
+          <a href="#" class="link-arrow magnetic">View all products ↗</a>
+        </div>
+
+        <div class="product-grid">
+          <!-- 250ml -->
+          <div class="product-card reveal tilt-card">
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?q=80&w=800&auto=format&fit=crop"
+                alt="250ml Bottle"
+              />
+              <span class="product-tag">↗ 01</span>
+            </div>
+            <div class="product-info">
+              <span class="eyebrow dark" style="margin-bottom: 5px"
+                >Compact & Sleek</span
+              >
+              <h3>250 ml</h3>
+              <p class="desc">Events, conferences, airlines</p>
+              <div class="product-bottom">
+                <div class="price">₹90 <span>/ box</span></div>
+                <a href="#contact" class="circle-btn"
+                  ><i data-lucide="arrow-up-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 500ml -->
+          <div
+            class="product-card reveal tilt-card"
+            style="transition-delay: 0.1s"
+          >
+            <div class="product-img">
+              <img
+                src="https://bookmyrashan.com/cdn/shop/files/kinley-packaged-drinking-water-1-l-product-images-o490001790-p490001790-0-202203171141.webp?v=1751357496&width=1920"
+                alt="500ml Bottle"
+              />
+              <span class="product-tag">↗ 02</span>
+            </div>
+            <div class="product-info">
+              <span class="eyebrow dark" style="margin-bottom: 5px"
+                >Everyday Elegance</span
+              >
+              <h3>500 ml</h3>
+              <p class="desc">Corporate offices, hotels, cafes</p>
+              <div class="product-bottom">
+                <div class="price">₹90 <span>/ box</span></div>
+                <a href="#contact" class="circle-btn"
+                  ><i data-lucide="arrow-up-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1L -->
+          <div
+            class="product-card reveal tilt-card"
+            style="transition-delay: 0.2s"
+          >
+            <div class="product-img">
+              <img
+                src="https://images.unsplash.com/photo-1523362628745-0c100150b504?q=80&w=800&auto=format&fit=crop"
+                alt="1L Bottle"
+              />
+              <span class="product-tag">↗ 03</span>
+            </div>
+            <div class="product-info">
+              <span class="eyebrow dark" style="margin-bottom: 5px"
+                >Dining Standard</span
+              >
+              <h3>1 Litre</h3>
+              <p class="desc">Fine dining, restaurants, boardrooms</p>
+              <div class="product-bottom">
+                <div class="price">₹75 <span>/ box</span></div>
+                <a href="#contact" class="circle-btn"
+                  ><i data-lucide="arrow-up-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHO WE SERVE -->
+    <section class="serve section-padding" id="serve">
+      <div class="container serve-grid">
+        <div class="serve-left reveal">
+          <span class="eyebrow dark">Made to move with you</span>
+          <h2 class="heading-serif">Water that belongs in the room</h2>
+          <p>
+            Quietly present at the moments that matter — and delivered with the
+            reliability your operation needs.
+          </p>
+        </div>
+
+        <div class="serve-cards">
+          <a href="#contact" class="serve-card reveal">
+            <img
+              src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format&fit=crop"
+              alt="Corporate Offices"
+            />
+            <div class="serve-card-content">
+              <h3>Corporate offices</h3>
+              <p>For teams, meetings and visitors.</p>
+            </div>
+          </a>
+          <a
+            href="#contact"
+            class="serve-card reveal"
+            style="transition-delay: 0.1s"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop"
+              alt="Hotels & Restaurants"
+            />
+            <div class="serve-card-content">
+              <h3>Hotels & restaurants</h3>
+              <p>For guest rooms, dining and service areas.</p>
+            </div>
+          </a>
+          <a
+            href="#contact"
+            class="serve-card reveal"
+            style="transition-delay: 0.2s; grid-column: span 1"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=800&auto=format&fit=crop"
+              alt="Events & Conferences"
+            />
+            <div class="serve-card-content">
+              <h3>Events & conferences</h3>
+              <p>For gatherings that deserve a refined touch.</p>
+            </div>
+          </a>
+          <div
+            class="serve-card stat-card reveal"
+            style="transition-delay: 0.3s"
+          >
+            <h2>100<span style="font-size: 2rem">%</span></h2>
+            <p>manufacturer-direct quality<br />for Delhi NCR businesses</p>
+            <a href="#about" class="magnetic">Our approach ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG STATEMENT CTA -->
+    <section class="statement">
+      <div class="container reveal">
+        <span class="eyebrow" style="display: flex; justify-content: center"
+          >A dependable ritual</span
+        >
+        <h2>When quality is felt<br /><em>before it is tasted.</em></h2>
+        <a href="#contact" class="btn btn-white magnetic">Plan your supply ↗</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq section-padding" id="about">
+      <div class="container faq-grid">
+        <div class="faq-left reveal">
+          <span class="eyebrow dark">Questions, answered</span>
+          <h2 class="heading-serif">The useful details.</h2>
+          <p>A few things businesses ask us most often.</p>
+        </div>
+        <div class="faq-right reveal" style="transition-delay: 0.1s">
+          <div class="faq-item">
+            <div class="faq-question">
+              What is the minimum order quantity?
+              <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Minimum quantities vary by bottle size and delivery location.
+                Share your requirement and our team will confirm the right
+                minimum for your area.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Do you offer recurring supply for offices?
+              <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                Yes. We can arrange daily, weekly or monthly supply based on
+                your team size and consumption.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              How quickly can delivery be arranged?
+              <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                For most NCR service areas, deliveries can be scheduled within
+                the same week, subject to stock and routing.
+              </div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Can I request a custom bottle size or label?
+              <i data-lucide="chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">
+                We currently offer the standard sizes listed above. For custom
+                labelling or large corporate orders, contact us to discuss what
+                is possible.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand reveal">
+            <a href="#" class="logo">
+              <span class="logo-icon"></span>
+              OCEARA
+            </a>
+            <p>
+              Premium packaged drinking water for Delhi NCR's finest
+              establishments.
+            </p>
+          </div>
+          <div class="footer-col reveal" style="transition-delay: 0.1s">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="#collection">Products</a></li>
+              <li><a href="#about">Our Story</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col reveal" style="transition-delay: 0.2s">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="mailto:ocearadwaters@gmail.com">Email us</a></li>
+              <li>
+                <a
+                  href="https://instagram.com/Oceara_drinking_water"
+                  target="_blank"
+                  >Instagram</a
+                >
+              </li>
+              <li><a href="#">Delhi NCR, India</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom reveal" style="transition-delay: 0.3s">
+          <span>© 2024 Oceara</span>
+          <div class="footer-badges">
+            <span>FSSAI</span>
+            <span>GST</span>
+            <span>Manufacturer Direct</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a
+      href="https://wa.me/919999999999?text=Hi%20Oceara,%20I%20am%20interested%20in%20your%20water%20supply"
+      target="_blank"
+      class="whatsapp-float"
+      aria-label="WhatsApp"
+    >
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
     <script>
-      /* ===== Home-page enhancements (works alongside assets/js/script.js) ===== */
-      (function () {
-        const $ = (s, r = document) => r.querySelector(s);
-        const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+      // Init Icons
+      lucide.createIcons();
 
-        /* Scroll progress + mobile CTA */
-        const bar = $("#progress");
-        const mcta = $("#mobileCta");
-        let ticking = false;
-        function onScroll() {
-          const max = document.documentElement.scrollHeight - innerHeight;
-          bar.style.transform =
-            "scaleX(" + (max > 0 ? Math.min(scrollY / max, 1) : 0) + ")";
-          mcta.classList.toggle("show", scrollY > 500);
-          ticking = false;
-        }
-        addEventListener(
-          "scroll",
-          () => {
-            if (!ticking) {
-              ticking = true;
-              requestAnimationFrame(onScroll);
-            }
-          },
-          { passive: true },
-        );
-        onScroll();
+      // Custom Cursor Logic
+      const cursorDot = document.querySelector(".cursor-dot");
+      const cursorOutline = document.querySelector(".cursor-outline");
 
-        /* Reveal fallback (safe even if script.js also does this) */
-        const rv = $$(".rv");
-        if (!("IntersectionObserver" in window)) {
-          rv.forEach((el) => el.classList.add("in"));
-        } else {
-          const io = new IntersectionObserver(
-            (entries) =>
-              entries.forEach((e) => {
-                if (e.isIntersecting) {
-                  e.target.classList.add("in");
-                  io.unobserve(e.target);
-                }
-              }),
-            { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      if (window.matchMedia("(pointer: fine)").matches) {
+        window.addEventListener("mousemove", (e) => {
+          const posX = e.clientX;
+          const posY = e.clientY;
+
+          cursorDot.style.left = `${posX}px`;
+          cursorDot.style.top = `${posY}px`;
+
+          // Outline follows with a slight delay
+          cursorOutline.animate(
+            {
+              left: `${posX}px`,
+              top: `${posY}px`,
+            },
+            { duration: 500, fill: "forwards" },
           );
-          rv.forEach((el) => io.observe(el));
+        });
+
+        // Hover effect on links
+        const links = document.querySelectorAll("a, button, .faq-question");
+        links.forEach((link) => {
+          link.addEventListener("mouseenter", () => {
+            cursorOutline.style.width = "60px";
+            cursorOutline.style.height = "60px";
+            cursorOutline.style.backgroundColor = "rgba(0, 229, 255, 0.1)";
+          });
+          link.addEventListener("mouseleave", () => {
+            cursorOutline.style.width = "40px";
+            cursorOutline.style.height = "40px";
+            cursorOutline.style.backgroundColor = "transparent";
+          });
+        });
+      }
+
+      // Navbar Scroll Effect
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
         }
+      });
 
-        /* FAQ: one open at a time */
-        $$("#faqList details").forEach((d) =>
-          d.addEventListener("toggle", () => {
-            if (d.open)
-              $$("#faqList details").forEach((o) => {
-                if (o !== d) o.open = false;
-              });
-          }),
-        );
+      // FAQ Accordion Logic
+      const faqItems = document.querySelectorAll(".faq-item");
+      faqItems.forEach((item) => {
+        const question = item.querySelector(".faq-question");
+        question.addEventListener("click", () => {
+          faqItems.forEach((otherItem) => {
+            if (otherItem !== item) otherItem.classList.remove("active");
+          });
+          item.classList.toggle("active");
+        });
+      });
 
-        /* Water requirement estimator */
-        const people = $("#estPeople");
-        if (people) {
-          const out = $("#estPeopleOut");
-          const days = $("#estDays");
-          const cta = $("#estCta");
-          const els = {
-            b: $("#estBottles"),
-            l: $("#estLitres"),
-            d: $("#estDaily"),
-          };
-          const fmt = (n) => Math.round(n).toLocaleString("en-IN");
-          const val = (name) => +$('input[name="' + name + '"]:checked').value;
-          const sizeLabel = (ml) => (ml >= 1000 ? ml / 1000 + " litre" : ml + " ml");
-
-          function setNum(el, text) {
-            if (el.textContent !== text) {
-              el.textContent = text;
-              el.classList.remove("pulse-num");
-              void el.offsetWidth;
-              el.classList.add("pulse-num");
+      // Scroll Reveal Animation (Intersection Observer)
+      const revealElements = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
             }
-          }
+          });
+        },
+        {
+          threshold: 0.15,
+          rootMargin: "0px 0px -50px 0px",
+        },
+      );
 
-          function calc() {
-            const p = +people.value;
-            const perDay = val("perDay");
-            const size = val("size");
-            const d = +days.value;
-            const daily = p * perDay;
-            const bottles = daily * d;
-            const litres = (bottles * size) / 1000;
+      revealElements.forEach((el) => revealObserver.observe(el));
 
-            out.textContent = p >= 500 ? "500+" : p;
-            people.style.setProperty(
-              "--fill",
-              ((p - people.min) / (people.max - people.min)) * 100 + "%",
-            );
-            setNum(els.b, fmt(bottles));
-            setNum(els.l, fmt(litres));
-            setNum(els.d, fmt(daily));
+      // Magnetic Buttons Logic
+      const magneticBtns = document.querySelectorAll(".magnetic");
+      magneticBtns.forEach((btn) => {
+        btn.addEventListener("mousemove", (e) => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
 
-            const q = new URLSearchParams({
-              source: "estimator",
-              people: p,
-              bottles_per_person_per_day: perDay,
-              bottle_size: sizeLabel(size),
-              days_per_month: d,
-              est_bottles_per_month: Math.round(bottles),
-            });
-            cta.href = "contact.html?" + q.toString();
-          }
+          btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+        });
+        btn.addEventListener("mouseleave", () => {
+          btn.style.transform = `translate(0px, 0px)`;
+          btn.style.transition = "transform 0.3s ease-out";
+        });
+        btn.addEventListener("mouseenter", () => {
+          btn.style.transition = "none";
+        });
+      });
 
-          $("#estForm").addEventListener("input", calc);
-          $("#estForm").addEventListener("change", calc);
-          calc();
-        }
+      // 3D Tilt Effect on Product Cards & Hero Image
+      function handleTilt(e) {
+        const card = e.currentTarget;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-        /* Make sure icons added after load render (no-op if already done) */
-        if (window.lucide && lucide.createIcons) {
-          try {
-            lucide.createIcons();
-          } catch (e) {}
-        }
-      })();
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -10;
+        const rotateY = ((x - centerX) / centerX) * 10;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      }
+
+      function resetTilt(e) {
+        e.currentTarget.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+      }
+
+      const tiltCards = document.querySelectorAll(".tilt-card, #tiltImage");
+      tiltCards.forEach((card) => {
+        card.addEventListener("mousemove", handleTilt);
+        card.addEventListener("mouseleave", resetTilt);
+      });
     </script>
   </body>
 </html>

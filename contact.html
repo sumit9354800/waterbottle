@@ -1,40 +1,674 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contact & Request a Quote | AquaDrop</title>
-<meta name="description" content="Request a quote for packaged drinking water supply for your business.">
-<meta property="og:title" content="Contact & Request a Quote | AquaDrop"><meta property="og:description" content="Request a quote for packaged drinking water supply for your business."><meta property="og:type" content="website">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://unpkg.com/lucide@0.383.0/dist/umd/lucide.min.js"></script>
-<link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body class="bg-white text-slate-800 antialiased">
-<div id="site-header"></div>
-<main>
-<section class="relative overflow-hidden bg-[#071b42] text-white"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=70" alt="" class="absolute inset-0 h-full w-full object-cover opacity-25" onerror="this.remove()"><div class="absolute inset-0 bg-gradient-to-r from-[#071b42] via-[#071b42]/90 to-[#0a3a8f]/60"></div>
-<div class="relative mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20"><p class="eyebrow !text-cyan-300">Get In Touch</p><h1 class="mt-4 max-w-3xl text-4xl font-extrabold leading-tight sm:text-5xl">Let’s discuss your water supply.</h1><p class="mt-5 max-w-2xl leading-7 text-slate-300">Share your business details and requirements. We’ll use them to follow up about your enquiry.</p></div></section>
-<section class="section-wrap"><div class="grid gap-12 lg:grid-cols-5">
-<div class="lg:col-span-2"><p class="eyebrow">Request a Quote</p><h2 class="section-title">Tell us what you need.</h2><p class="section-copy">Please include an estimated quantity and delivery location so we can understand your requirement.</p>
-<div class="mt-10 space-y-6">
-<div class="flex gap-4"><span class="ico h-12 w-12 shrink-0"><i data-lucide="phone" class="h-5 w-5"></i></span><div><p class="text-sm text-slate-500">Phone / WhatsApp</p><p class="font-bold" id="c-phone"></p></div></div>
-<div class="flex gap-4"><span class="ico h-12 w-12 shrink-0"><i data-lucide="mail" class="h-5 w-5"></i></span><div><p class="text-sm text-slate-500">Email</p><p class="break-all font-bold" id="c-email"></p></div></div>
-<div class="flex gap-4"><span class="ico h-12 w-12 shrink-0"><i data-lucide="map-pin" class="h-5 w-5"></i></span><div><p class="text-sm text-slate-500">Service area</p><p class="font-bold" id="c-loc"></p></div></div></div></div>
-<div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-xl sm:p-9 lg:col-span-3"><h2 class="text-2xl font-extrabold text-[#071b42]">Business enquiry form</h2><p class="mt-2 text-sm text-slate-500">Fields marked * are required. Your enquiry is sent to our team on WhatsApp.</p>
-<p id="form-msg" role="status"></p>
-<form id="enquiry-form" class="mt-7 space-y-5" novalidate>
-<div class="grid gap-5 sm:grid-cols-2"><div><label class="form-label" for="name">Full name *</label><input class="form-input" id="name" name="name" maxlength="100" required autocomplete="name"></div><div><label class="form-label" for="company">Company / business name</label><input class="form-input" id="company" name="company" maxlength="150"></div></div>
-<div class="grid gap-5 sm:grid-cols-2"><div><label class="form-label" for="phone">Mobile number *</label><input class="form-input" id="phone" name="phone" type="tel" maxlength="20" required autocomplete="tel" placeholder="10-digit mobile number"></div><div><label class="form-label" for="email">Email address</label><input class="form-input" id="email" name="email" type="email" maxlength="150" autocomplete="email"></div></div>
-<div><label class="form-label" for="product">Bottle size / product *</label><select class="form-input" id="product" name="product" required></select></div>
-<div class="grid gap-5 sm:grid-cols-2"><div><label class="form-label" for="quantity">Estimated quantity *</label><input class="form-input" id="quantity" name="quantity" maxlength="80" required placeholder="e.g. 500 bottles"></div><div><label class="form-label" for="location">Delivery location *</label><input class="form-input" id="location" name="location" maxlength="180" required placeholder="Area / city"></div></div>
-<div><label class="form-label" for="frequency">Supply frequency</label><select class="form-input" id="frequency" name="frequency"><option value="">Select frequency</option><option>One-time order</option><option>Daily</option><option>Weekly</option><option>Monthly</option><option>As required</option></select></div>
-<div><label class="form-label" for="message">Additional requirements</label><textarea class="form-input" id="message" name="message" rows="4" maxlength="2000"></textarea></div>
-<button class="btn btn-primary w-full" type="submit">Submit Enquiry</button>
-<p class="text-center text-xs text-slate-400">Your details will be used to respond to this business enquiry.</p></form></div></div></section>
-</main>
-<div id="site-footer"></div>
-<script src="assets/js/script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact & Request a Quote | OCEARA</title>
+    <meta
+      name="description"
+      content="Request a quote for premium packaged drinking water supply for your business in Delhi NCR."
+    />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Contact Page Specific CSS -->
+    <style>
+      .page-hero {
+        background-color: var(--navy);
+        padding: 160px 0 100px;
+        position: relative;
+        overflow: hidden;
+      }
+      .page-hero h1 {
+        font-family: var(--serif);
+        font-size: clamp(3rem, 5vw, 4.5rem);
+        color: white;
+        margin-bottom: 20px;
+        line-height: 1.1;
+      }
+      .page-hero p {
+        color: rgba(255, 255, 255, 0.6);
+        max-width: 600px;
+        font-size: 1.1rem;
+      }
+
+      .contact-grid-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 60px;
+        align-items: start;
+      }
+
+      .contact-info-card {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background: white;
+        padding: 24px;
+        border-radius: 12px;
+        border: 1px solid #eee;
+        margin-bottom: 20px;
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+      }
+      .contact-info-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+      }
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--bg-offwhite);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--navy);
+        flex-shrink: 0;
+      }
+      .contact-icon i {
+        width: 24px;
+        height: 24px;
+      }
+
+      .contact-text p {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-light);
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      .contact-text strong {
+        font-size: 1.1rem;
+        color: var(--navy);
+        word-break: break-word;
+      }
+
+      /* Form Styling */
+      .form-container {
+        background: white;
+        padding: 50px;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+        border: 1px solid #eee;
+      }
+      .form-container h2 {
+        font-family: var(--serif);
+        font-size: 2rem;
+        color: var(--navy);
+        margin-bottom: 10px;
+      }
+      .form-container p.subtitle {
+        color: var(--text-light);
+        margin-bottom: 30px;
+        font-size: 0.95rem;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 8px;
+      }
+      .form-input {
+        width: 100%;
+        padding: 14px 18px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: var(--sans);
+        font-size: 0.95rem;
+        background: #fafafa;
+        transition: all 0.3s;
+      }
+      .form-input:focus {
+        outline: none;
+        border-color: var(--cyan);
+        background: white;
+        box-shadow: 0 0 0 4px rgba(0, 229, 255, 0.1);
+      }
+      .form-input.error {
+        border-color: #ef4444;
+        background: #fef2f2;
+      }
+      .error-msg {
+        display: none;
+        color: #ef4444;
+        font-size: 0.75rem;
+        margin-top: 5px;
+        font-weight: 600;
+      }
+      .form-input.error + .error-msg {
+        display: block;
+      }
+
+      .btn-submit {
+        width: 100%;
+        background: var(--navy);
+        color: white;
+        border: none;
+        padding: 16px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: background 0.3s;
+      }
+      .btn-submit:hover {
+        background: var(--navy-light);
+      }
+      .btn-submit i {
+        width: 18px;
+        height: 18px;
+      }
+
+      .status-msg {
+        display: none;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+      .status-msg.success {
+        display: block;
+        background: #ecfdf5;
+        color: #047857;
+        border: 1px solid #a7f3d0;
+      }
+      .status-msg.error-status {
+        display: block;
+        background: #fef2f2;
+        color: #b91c1c;
+        border: 1px solid #fecaca;
+      }
+
+      @media (max-width: 900px) {
+        .contact-grid-layout {
+          grid-template-columns: 1fr;
+        }
+        .form-container {
+          padding: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+      <div class="container nav-inner">
+        <a href="index.html" class="logo">
+          <span class="logo-icon"></span>
+          OCEARA
+        </a>
+        <ul class="nav-links">
+    <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="index.html#serve">Who We Serve</a></li>
+          <li><a href="contact.html" class="active" style="color: var(--cyan)">Contact</a></li>
+        </ul>
+        <a href="#enquiry" class="btn btn-yellow magnetic">Get a Quote ↗</a>
+      </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="hero-bg-grid"></div>
+      <div class="container relative z-10">
+        <span class="eyebrow">Get in Touch</span>
+        <h1>Let's discuss your<br /><em>water supply.</em></h1>
+        <p>
+          Share your business details and requirement. We'll reply within 1
+          business day with a tailored quote and delivery plan.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section
+      class="section-padding"
+      id="enquiry"
+      style="background-color: var(--bg-offwhite)"
+    >
+      <div class="container">
+        <div class="contact-grid-layout">
+          <!-- Left: Contact Info -->
+          <div class="reveal">
+            <h2
+              class="heading-serif"
+              style="font-size: 2.5rem; margin-bottom: 20px"
+            >
+              Tell us what you need.
+            </h2>
+            <p
+              style="
+                color: var(--text-light);
+                margin-bottom: 40px;
+                font-size: 1.05rem;
+              "
+            >
+              Include an estimated quantity and delivery location so we can
+              understand your requirement better.
+            </p>
+
+            <div class="contact-info-card">
+              <div class="contact-icon"><i data-lucide="phone"></i></div>
+              <div class="contact-text">
+                <p>Phone / WhatsApp</p>
+                <strong id="display-phone">+91 99999 99999</strong>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon"><i data-lucide="mail"></i></div>
+              <div class="contact-text">
+                <p>Email Address</p>
+                <strong>ocearadwaters@gmail.com</strong>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon"><i data-lucide="instagram"></i></div>
+              <div class="contact-text">
+                <p>Instagram</p>
+                <strong>@Oceara_drinking_water</strong>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+              <div class="contact-text">
+                <p>Service Area</p>
+                <strong>Delhi NCR, India</strong>
+              </div>
+            </div>
+
+            <div
+              style="
+                margin-top: 30px;
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+              "
+            >
+              <span
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 8px;
+                  font-size: 0.85rem;
+                  color: var(--text-light);
+                "
+                ><i
+                  data-lucide="shield-check"
+                  style="color: var(--cyan); width: 16px"
+                ></i>
+                FSSAI & GST Certified</span
+              >
+              <span
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 8px;
+                  font-size: 0.85rem;
+                  color: var(--text-light);
+                "
+                ><i
+                  data-lucide="clock"
+                  style="color: var(--cyan); width: 16px"
+                ></i>
+                Reply within 1 business day</span
+              >
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div class="form-container reveal" style="transition-delay: 0.2s">
+            <h2>Business Enquiry Form</h2>
+            <p class="subtitle">
+              Fields marked * are required. Your enquiry opens in WhatsApp,
+              ready to send to our team.
+            </p>
+
+            <div id="form-status" class="status-msg"></div>
+
+            <form id="enquiry-form" novalidate>
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px"
+              >
+                <div class="form-group">
+                  <label class="form-label" for="name">Full Name *</label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Your name"
+                  />
+                  <span class="error-msg">Please enter your name.</span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="company">Company Name</label>
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="company"
+                    name="company"
+                    placeholder="Your company"
+                  />
+                </div>
+              </div>
+
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px"
+              >
+                <div class="form-group">
+                  <label class="form-label" for="phone">Mobile Number *</label>
+                  <input
+                    class="form-input"
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    placeholder="10-digit mobile number"
+                  />
+                  <span class="error-msg"
+                    >Enter a valid 10-digit mobile number.</span
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">Email Address</label>
+                  <input
+                    class="form-input"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@company.com"
+                  />
+                  <span class="error-msg">Enter a valid email address.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="product"
+                  >Bottle Size / Product *</label
+                >
+                <select class="form-input" id="product" name="product" required>
+                  <option value="">Select bottle size</option>
+                  <option value="250 ml box (24 bottles)">
+                    250 ml box (24 bottles) - ₹90/Box
+                  </option>
+                  <option value="500 ml box (24 bottles)">
+                    500 ml box (24 bottles) - ₹90/Box
+                  </option>
+                  <option value="1 Litre box (12 bottles)">
+                    1 Litre box (12 bottles) - ₹75/Box
+                  </option>
+                  <option value="2 Litre (bulk enquiry)">
+                    2 Litre (bulk enquiry)
+                  </option>
+                  <option value="20 Litre jar (bulk enquiry)">
+                    20 Litre jar (bulk enquiry)
+                  </option>
+                  <option value="Mixed / other requirement">
+                    Mixed / other requirement
+                  </option>
+                </select>
+                <span class="error-msg">Please select a size.</span>
+              </div>
+
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px"
+              >
+                <div class="form-group">
+                  <label class="form-label" for="quantity"
+                    >Estimated Quantity *</label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="quantity"
+                    name="quantity"
+                    required
+                    placeholder="e.g. 500 bottles"
+                  />
+                  <span class="error-msg"
+                    >Please add an estimated quantity.</span
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="location"
+                    >Delivery Location *</label
+                  >
+                  <input
+                    class="form-input"
+                    type="text"
+                    id="location"
+                    name="location"
+                    required
+                    placeholder="Area / City"
+                  />
+                  <span class="error-msg">Please add a delivery location.</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="frequency"
+                  >Supply Frequency</label
+                >
+                <select class="form-input" id="frequency" name="frequency">
+                  <option value="">Select frequency</option>
+                  <option value="One-time order">One-time order</option>
+                  <option value="Daily">Daily</option>
+                  <option value="Weekly">Weekly</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="As required">As required</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message"
+                  >Additional Requirements</label
+                >
+                <textarea
+                  class="form-input"
+                  id="message"
+                  name="message"
+                  rows="4"
+                  placeholder="Any specific requirements..."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit magnetic">
+                Send on WhatsApp <i data-lucide="send"></i>
+              </button>
+              <p
+                style="
+                  text-align: center;
+                  font-size: 0.75rem;
+                  color: var(--text-light);
+                  margin-top: 15px;
+                "
+              >
+                Your details are used only to respond to this business enquiry.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand reveal">
+            <a href="index.html" class="logo">
+              <span class="logo-icon"></span>
+              OCEARA
+            </a>
+            <p>
+              Premium packaged drinking water for Delhi NCR's finest
+              establishments.
+            </p>
+          </div>
+          <div class="footer-col reveal" style="transition-delay: 0.1s">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="index.html#about">Our Story</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col reveal" style="transition-delay: 0.2s">
+            <h4>Connect</h4>
+            <ul>
+              <li><a href="mailto:ocearadwaters@gmail.com">Email us</a></li>
+              <li>
+                <a
+                  href="https://instagram.com/Oceara_drinking_water"
+                  target="_blank"
+                  >Instagram</a
+                >
+              </li>
+              <li><a href="#">Delhi NCR, India</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom reveal" style="transition-delay: 0.3s">
+          <span>© 2024 Oceara</span>
+          <div class="footer-badges">
+            <span>FSSAI</span>
+            <span>GST</span>
+            <span>Manufacturer Direct</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a
+      href="https://wa.me/919999999999?text=Hi%20Oceara,%20I%20am%20interested%20in%20your%20water%20supply"
+      target="_blank"
+      class="whatsapp-float"
+      aria-label="WhatsApp"
+    >
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <!-- Custom JS (For Navbar, Cursor, Animations) -->
+    <script src="script.js"></script>
+
+    <!-- Contact Form Specific JS -->
+    <script>
+      const WA_NUMBER = "919999999999"; // <-- Apna WhatsApp number yahan daalein
+
+      const form = document.getElementById("enquiry-form");
+      const statusMsg = document.getElementById("form-status");
+
+      const rules = {
+        name: (v) => v.trim().length > 1,
+        phone: (v) => /^(\+?91)?[6-9]\d{9}$/.test(v.replace(/[\s-]/g, "")),
+        email: (v) => !v || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+        product: (v) => !!v,
+        quantity: (v) => v.trim().length > 0,
+        location: (v) => v.trim().length > 1,
+      };
+
+      function validate() {
+        let isValid = true;
+        Object.keys(rules).forEach((key) => {
+          const input = form.elements[key];
+          const valid = rules[key](input.value);
+
+          if (!valid) {
+            input.classList.add("error");
+            if (isValid) input.focus(); // Focus on first error
+            isValid = false;
+          } else {
+            input.classList.remove("error");
+          }
+        });
+        return isValid;
+      }
+
+      // Real-time validation on input
+      form.addEventListener("input", (e) => {
+        const key = e.target.name;
+        if (rules[key]) {
+          if (rules[key](e.target.value)) {
+            e.target.classList.remove("error");
+          } else {
+            e.target.classList.add("error");
+          }
+        }
+      });
+
+      function showMessage(msg, isSuccess) {
+        statusMsg.textContent = msg;
+        statusMsg.className =
+          "status-msg " + (isSuccess ? "success" : "error-status");
+        statusMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if (!validate()) {
+          showMessage(
+            "Please fix the highlighted fields and try again.",
+            false,
+          );
+          return;
+        }
+
+        const data = new FormData(form);
+        const text =
+          `*New Business Enquiry (Oceara Website)*%0A%0A` +
+          `*Name:* ${data.get("name")}%0A` +
+          `*Company:* ${data.get("company") || "N/A"}%0A` +
+          `*Phone:* ${data.get("phone")}%0A` +
+          `*Email:* ${data.get("email") || "N/A"}%0A` +
+          `*Product:* ${data.get("product")}%0A` +
+          `*Quantity:* ${data.get("quantity")}%0A` +
+          `*Location:* ${data.get("location")}%0A` +
+          `*Frequency:* ${data.get("frequency") || "N/A"}%0A` +
+          `*Notes:* ${data.get("message") || "N/A"}`;
+
+        window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, "_blank");
+        showMessage(
+          "WhatsApp opened with your enquiry. Press send there to reach our team.",
+          true,
+        );
+      });
+    </script>
+  </body>
 </html>
